@@ -19,7 +19,7 @@
         $stmt = $history->readHistory();
 		$num = $stmt->rowCount();
 		//check if more than 0 record found
-		// if($num>=0){
+		if($num>0){
 
 			$history_arr=array();
 			$history_arr["records"]=array();
@@ -38,12 +38,11 @@
 
 			echo json_encode($history_arr);
 
-		// }
-		// else{
-		// 	http_response_code(500);
-		// 	echo json_encode(
-		// 		array("message" => "500 ERROR ")
-		// 	);
-		// }
+		}
+		else{
+			echo json_encode(
+				array("message" => "500 ERROR")
+			);
+		}
     
 ?>

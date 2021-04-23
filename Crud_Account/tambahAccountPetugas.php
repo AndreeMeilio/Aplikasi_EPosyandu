@@ -1,4 +1,9 @@
-
+<?php
+  session_start();
+  if(!isset($_SESSION['username_admin'])){
+    header("location: ../index.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,8 +55,11 @@
 				nama_petugas = $(this).children("option:selected").val();
 			});
 
+
 			$("#ttambah").click(function(){ 
 				//ambil nilai-nilai dari masing-masing input 
+				$("#ttambah").attr("disabled");
+				$("#status").html("lagi diproses");
 				username = $("#username").val();
     			password = $("#password").val();
     			//data = "&tgl_imun="+tgl_imun+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan="+berat_badan+"&periode="+periode;
@@ -71,10 +79,11 @@
     			success : function(msg){
     				if(msg.message == "account was created."){
     					alert("Account berhasil Ditambah");
-						window.location.href="accountPetugas.php"
+						window.location.href="accountPetugas.php";
     				} else if (msg.message == "Unable to create data account.") {
     					alert("DATA TIDAK LENGKAP");
-    				}
+						$("#status").html("Data Tidak Lengkap");
+					}
     				$("#loading").hide();
        			}
 				});

@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['username_admin'])){
+    header("location: ../index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,17 +78,23 @@
                 cache : false,
                 success : function(msg){
                     data = msg.records;
-                    console.log(msg.records);
                     var content = "";
-                    for (let index = 0; index < data.length; index++) {
-                        const element = data[index];
-                        content+="<tr>";
-                        content+= "<td>"+element.tgl_imunisasi+"</td>";
-                        content+= "<td>"+element.id_vaksin+"</td>";
-                        content+="</tr>";
+                    if (msg.message == "500 ERROR"){
+                        content += "<tr>";
+                        content += "<td colspan='2'>Tidak Ada Riwayat Vaksin</td>";
+                        content += "</tr>";
+
+                        $("#content").html(content);
+                    } else { 
+                        for (let index = 0; index < data.length; index++) {
+                            const element = data[index];
+                            content+="<tr>";
+                            content+= "<td>"+element.tgl_imunisasi+"</td>";
+                            content+= "<td>"+element.id_vaksin+"</td>";
+                            content+="</tr>";
+                        }
+                        $("#content").html(content);
                     }
-                    $("#content").html(content);
-                    console.log(content);
                 }
             });
         }

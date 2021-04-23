@@ -23,7 +23,7 @@
         $data = $_POST['data_account'];
         $id_login = $_POST['id_login'];
 
-        $currentPassword = $data['current_password'];
+        // $currentPassword = $data['current_password'];
         $newPassword = $data['new_password'];
         $confirmPassword = $data['confirm_password'];
         
@@ -31,7 +31,7 @@
         $row = $result->fetch(PDO::FETCH_ASSOC);
         $passFromDatabase = $row['password'];
 
-        if (password_verify($currentPassword, $passFromDatabase)){
+        // if (password_verify($currentPassword, $passFromDatabase)){
             if ($newPassword == $confirmPassword){
                 $account->id_login = $id_login;
                 $account->username = $data['username'];
@@ -58,9 +58,9 @@
             } else {
                 echo json_encode(array("message"=>"new password dan confirm password harus sama"));
             }
-        } else {
-            echo json_encode(array("message"=>"current password yang dimasukkan salah"));
-        }
+        // } else {
+        //     echo json_encode(array("message"=>"current password yang dimasukkan salah"));
+        // }
     } else if ($func_account == "update_data_account_admin"){
         $data = $_POST['data_account_admin'];
         $id_login = $_POST['id_login'];

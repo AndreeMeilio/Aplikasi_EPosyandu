@@ -4,5 +4,5 @@ $_SESSION['username'] = '';
 unset($_SESSION['username']);
 session_unset();
 session_destroy();
-header("Location: http://localhost/Aplikasi_EPosyandu/login.php");
+header("Location: http://localhost/Aplikasi_EPosyandu/");
 ?>

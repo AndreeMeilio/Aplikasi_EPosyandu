@@ -19,7 +19,7 @@
 	$stmt = $anak->read();
 	$num = $stmt->rowCount();
 
-	$dataPerPage = 4;
+	$dataPerPage = 9;
 	$jumlahHalaman = ceil($num / $dataPerPage);
 	$halamanAktif = $_GET['page'];
 	$startPage = ($dataPerPage * $halamanAktif) - $dataPerPage;

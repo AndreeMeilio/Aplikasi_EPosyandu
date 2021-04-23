@@ -1,4 +1,9 @@
-
+<?php
+  session_start();
+  if(!isset($_SESSION['username_petugas'])){
+    header("location: http://localhost/Aplikasi_EPosyandu/index.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>

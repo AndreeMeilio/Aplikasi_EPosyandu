@@ -1,7 +1,7 @@
 <?php
   session_start();
-  if(!isset($_SESSION['username_admin'])){
-    header("location: ..\login.php");
+  if(!isset($_SESSION['username_petugas'])){
+    header("location: http://localhost/Aplikasi_EPosyandu/index.php");
   }
 ?>
 <html>
