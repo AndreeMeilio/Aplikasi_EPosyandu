@@ -15,6 +15,9 @@
           background-size: cover;
           background-repeat: repeat-y;
         }
+        .form-group{
+            margin-left: -15px;
+        }
     </style>
 </head>
 <body>
@@ -27,18 +30,18 @@
             <table id="ttable" border="0" class="table table-hover table-light table-striped" style="width: 200%;">
                 <h1>Riwayat Vaksin Anak</h1><br>
                 <form action="">
-<div class="container">
+                <div class="container">
 
-<div class="panel panel-default">
-<div class="panel-body">
-  <div class="form-group">
-    <label>Cari Nama Anak : </label>
-    <div>
- <select name="ibukota" class="selectpicker form-control" data-live-search="true" id="id_anak" ><option></option></select><br>
-    </div>
-    </div>
-    </div>
-    </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label>Cari Nama Anak : </label>
+                            <div>
+                                <select name="ibukota" class="selectpicker form-control" data-live-search="true" id="id_anak"><option></option></select><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <thead class="bg-dark">
                     <tr class="text-white">
                         <th>Tanggal Imunisasi</th>

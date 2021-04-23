@@ -116,10 +116,10 @@
 		while($d = mysqli_fetch_array($data)){
 			?>
 			<tr>
-				<td><?php echo $d['nama_posyandu']; ?></td>
+				<td><?php echo $d['nama_posyandu']; ?><br></td>
 				<td><?php echo $d['alamat_posyandu']; ?></td>
-        <td><?php echo $d['kel_posyandu']; ?></td>
-        <td><?php echo $d['kec_posyandu']; ?></td>
+        <td>Kelurahan <?php echo $d['kel_posyandu']; ?></td>
+        <td>, Kecamatan <?php echo $d['kec_posyandu']; ?>,</td>
         <td><?php echo $d['kota_kab_posyandu']; ?></td>
 			</tr>
 			<?php 
@@ -131,7 +131,7 @@
           </div>
           <span id="muncul"></span>
           <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <br><br><br>
+            <br><br><br><br><br><br>
             <p class="text-dark text">© 2021 Copyright: Kokuri team, PT. Tristek Media Kreasindo</p>
           </div>
         </div>

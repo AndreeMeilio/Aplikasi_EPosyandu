@@ -14,7 +14,7 @@
 	    <style type="text/css">
 			body{
 				font-family: "Futura Md BT";
-		        background-image: url(../img/Menu/bggg.png);
+		        background-image: url(../img/Menu/bg1.png);
 		        background-repeat: repeat;
 		    }
 	      	#button {
@@ -113,7 +113,7 @@
 
 			getAllData();
 			 $(document).on('click', '.tdelete', function(){
-				 var yakin = confirm("Apakah anda yakin ingin menghapu data ? ");
+				 var yakin = confirm("Apakah anda yakin ingin menghapus data ? ");
 				 if(yakin == true){
 					$.ajax({
           			type : "POST",
