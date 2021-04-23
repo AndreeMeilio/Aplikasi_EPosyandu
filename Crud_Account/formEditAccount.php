@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: login.php");
+    header("location: ../index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -27,11 +27,6 @@
                         <div class="form-group">
                             <label for="username" id="label">Username</label>
                             <input type="text" class="form-control" id="username">
-                        </div>
-
-                        <div class="form-group"> 
-                            <label for="current_password" id="label">Current Password</label>
-                            <input type="password" class="form-control" id="current_password">
                         </div>
                         <div class="form-group"> 
                             <label for="new_password" id="label">New Password</label>
@@ -73,7 +68,6 @@
     <script type="text/javascript">
         var username;
         var password;
-        var current_password;
         var new_password;
         var confirm_password;
         var nama_petugas;
@@ -104,14 +98,14 @@
                 }
             });
 
-            $("#id_petugas").change(function(){
-                id_petugas = $(this).children("option:selected").val();
-            });
+            // $("#id_petugas").change(function(){
+            //     id_petugas = $(this).children("option:selected").val();
+            // });
 
             $("#tupdate").click(function(){
                 nama_petugas = $("#nama_petugas").val();
                 username = $("#username").val();
-                current_password = $("#current_password").val();
+                // current_password = $("#current_password").val();
                 new_password = $("#new_password").val();
                 confirm_password = $("#confirm_password").val();
                 id_petugas = $("#id_petugas").val();
@@ -119,7 +113,7 @@
                 //data = "&tgl_imun="+tgl_imun+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan="+berat_badan+"&periode="+periode;
                 data_account = {
                     "username" : username,
-                    "current_password" : current_password,
+                    // "current_password" : current_password,
                     "new_password" : new_password,
                     "confirm_password" : confirm_password,
                     "id_petugas" : id_petugas

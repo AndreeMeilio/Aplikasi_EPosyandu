@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: ..\login.php");
+    header("location: http://localhost/Aplikasi_EPosyandu/index.php");
   }
 ?>
 <html>
@@ -84,6 +84,8 @@ Email :
 		var saran;
 		$(document).ready(function(){
 			$("#tambahpesan").click(function(){ 
+				$("#status").html("lagi diproses");
+				$("#tambahpesan").prop('disabled', true);
 				//ambil nilai-nilai dari masing-masing input 
 				nama= $("#nama").val();
     			kritik = $("#kritik").val();
@@ -97,7 +99,7 @@ Email :
 					"kritik" : kritik,
 					"email" : email,
 					"tanggal" : tanggal				
-					};	
+				};	
 
 				
     			$("#loading").show();

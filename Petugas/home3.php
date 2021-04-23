@@ -76,7 +76,7 @@
     </div>
     <div id="container align-self-center" class="bawahnav">
       <div class="box">
-        <div class="row justify-content-lg-center">
+        <div class="row justify-content-lg-center mt-5 mb-4">
           <div class="col-md-3">
             <a href="Crud_Imunisasi/crudImunisasi.php"><img src="img/Menu/dataimun.png" class="card-img" width="100px" /></a>
           </div>
@@ -118,14 +118,14 @@
 		$no = 1;
 		$data = mysqli_query($conn,"select * from ref_posyandu");
 		while($d = mysqli_fetch_array($data)){
-			?>
+			?>>
 			<tr>
-				<td><?php echo $d['nama_posyandu']; ?></td>
-				<td><?php echo $d['alamat_posyandu']; ?></td>
-        <td><?php echo $d['kel_posyandu']; ?></td>
-        <td><?php echo $d['kec_posyandu']; ?></td>
+        <td><?php echo $d['nama_posyandu']; ?><br></td>
+        <td><?php echo $d['alamat_posyandu']; ?></td>
+        <td>Kelurahan <?php echo $d['kel_posyandu']; ?></td>
+        <td>, Kecamatan <?php echo $d['kec_posyandu']; ?>,</td>
         <td><?php echo $d['kota_kab_posyandu']; ?></td>
-			</tr>
+      </tr>
 			<?php 
 		}
 		?></h5>

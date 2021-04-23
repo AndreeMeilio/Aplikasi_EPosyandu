@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: ..\login.php");
+    header("location: http://localhost/Aplikasi_EPosyandu/index.php");
   }
 ?>
 <html>
@@ -113,7 +113,7 @@
 
 			getAllData();
 			 $(document).on('click', '.tdelete', function(){
-				 var yakin = confirm("Apakah anda yakin ingin menghapu data ? ");
+				 var yakin = confirm("Apakah anda yakin ingin menghapus data ? ");
 				 if(yakin == true){
 					$.ajax({
           			type : "POST",

@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: ..\login.php");
+    header("location: ../index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 	<link rel="shortcut icon" href="../img/icon/logoremove.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="../tambahcss.css">
 </head>
-<body style="background-image: url(../img/Menu/bggg.png); background-repeat: repeat-y;">
+<body style="background-image: url(../img/Menu/bg1.png); background-repeat: repeat-y;">
     <?php
         include "../sidebar.html";
     ?>

@@ -18,7 +18,7 @@
         $stmt = $petugas->read();
         $num = $stmt->rowCount();
 
-        $dataPerPage = 5;
+        $dataPerPage = 10;
 		$jumlahHalaman = ceil($num / $dataPerPage);
 		$halamanAktif = $_GET['page'];
 		$startPage = ($dataPerPage * $halamanAktif) - $dataPerPage;

@@ -2,13 +2,11 @@
 
 $conn = mysqli_connect("localhost", "root", "", "eposyandu");
 
-
-
     $data = $_POST['saran'];
     
-    $nama= htmlspecialchars($data['nama']);
-    $kritik = htmlspecialchars($data['kritik']);
-    $email = htmlspecialchars($data['email']);
+    $nama= $data['nama'];
+    $kritik = $data['kritik'];
+    $email = $data['email'];
     $tanggal = $data['tanggal'];
 
     $tambah = mysqli_query($conn, "INSERT INTO ref_bantuan(id_bantuan, nama, pesan, email, tanggal ) 

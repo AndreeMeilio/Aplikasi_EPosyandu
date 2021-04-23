@@ -23,15 +23,13 @@
     $query = $login->login();
     $row = $query->fetch(PDO::FETCH_ASSOC);
 	
-    if ($login->username != "admin" && password_verify($login->password, $row['password'])){
+    if ($row['id_login'] != 1 && password_verify($login->password, $row['password'])){
         if ($query->rowCount() > 0){
             session_start();
             $_SESSION['username_petugas'] = $login->username;
             $_SESSION['profile_id'] = $row['id_petugas_login'];
             $_SESSION['id_login'] = $row['id_login'];
             echo json_encode(array("message" => "petugas berhasil login"));
-        } else {
-            echo json_encode(array("message" => "username dan password tidak sesuai"));
         }
     } else if (password_verify($login->password, $row['password'])){
         if ($query->rowCount() > 0){
@@ -39,9 +37,9 @@
             $_SESSION['username_admin'] = $login->username;
             $_SESSION['id_login_admin'] = $row['id_login'];
             echo json_encode(array("message" => "admin berhasil login"));
-        } else {
-            echo json_encode(array("message" => "username dan password tidak sesuai"));
         }
+    } else {
+        echo json_encode(array("message" => "username dan password tidak sesuai"));
     }
     
 ?>

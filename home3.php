@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: login.php");
+    header("location: index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
     <title>E-Posyandu</title>
     <style type="text/css">
       .bawahnav {
-        background-image: url(img/Menu/bggg.png);
+        background-image: url(img/Menu/bg1.png);
         background-attachment: scroll;
         background-size: cover;
         background-origin: inherit;

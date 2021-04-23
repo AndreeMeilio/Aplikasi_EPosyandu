@@ -1,11 +1,4 @@
-<?php
-  session_start();
 
-  $username = @$_SESSION['username_admin'];
-  if (!empty($username)){
-    header("location: home3.php");
-  }
-?>
 <DOCTYPE! html >
 <html lang="en">
   <head>
@@ -124,12 +117,11 @@
                   window.location.href="http://localhost/Aplikasi_EPosyandu/home3.php";
     				    } else if(msg.message == "petugas berhasil login"){
                   window.location.href="http://localhost/Aplikasi_EPosyandu/Petugas/home3.php";
-                } else if (msg.message == "username dan password tidak sesuai") {
+                } else  {
     					    alert("username dan password tidak sesuai");
-    				    } else {
-                  alert("tidak ada data pada database");
+    				    }
                 }
-              }
+              
             });
           });
         });

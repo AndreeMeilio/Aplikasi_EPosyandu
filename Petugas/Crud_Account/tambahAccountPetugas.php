@@ -1,4 +1,9 @@
-
+<?php
+  session_start();
+  if(!isset($_SESSION['username_petugas'])){
+    header("location: http://localhost/Aplikasi_EPosyandu/index.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,6 +56,8 @@
 			});
 
 			$("#ttambah").click(function(){ 
+				$("#status").html("lagi diproses");
+				$("#ttambah").prop("disabled", true);
 				//ambil nilai-nilai dari masing-masing input 
 				username = $("#username").val();
     			password = $("#password").val();
@@ -61,7 +68,12 @@
 					"nama_petugas" : nama_petugas
 				};	
 				
-				
+				if (username == "" || password == "" || nama_petuags == ""){
+					alert("Data Tidak Lengkap");
+					$("#status").html("");
+                    $("#ttambah").prop("disabled", false);
+				}
+
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
