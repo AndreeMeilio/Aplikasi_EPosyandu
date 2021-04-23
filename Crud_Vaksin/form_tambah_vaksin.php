@@ -42,13 +42,20 @@
 		var vaksin;
 		$(document).ready(function(){
 			$("#ttambah").click(function(){ 
+				$("#status").html("lagi diproses");
+				$("#ttambah").prop("disabled", true);
 				//ambil nilai-nilai dari masing-masing input 
     			nama_vaksin = $("#nama_vaksin").val();
     			//data = "&tgl_imun="+tgl_imun+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan="+berat_badan+"&periode="+periode;
 				vaksin = {
 					"nama_vaksin" : nama_vaksin
-				};	
+				};
 
+				if (nama_vaksin == ""){
+					alert("Data Tidak Lengkap");
+					$("#status").html("");
+					$("#ttambah").prop("disabled", false);
+				}
 				
     			$("#loading").show();
     			$.ajax({

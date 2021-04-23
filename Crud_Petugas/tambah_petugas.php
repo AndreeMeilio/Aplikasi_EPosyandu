@@ -110,6 +110,8 @@
 		var petugas;
 		$(document).ready(function(){
 			$("#ttambah").click(function(){ 
+                $("#status").html("lagi diproses");
+				$$("#ttambah").prop("disabled", true);
 				//ambil nilai-nilai dari masing-masing input 
 				nama_petugas = $("#nama_petugas").val();
     			jabatan_petugas = $("#jabatan_petugas").val();
@@ -131,7 +133,11 @@
                     "status_petugas" : status_petugas
 				};	
 
-				
+				if (nama_petugas == "" || jabatan_petugas == "" || jk_petugas == "" || tempat_lahir_petugas == "" || tgl_lahir_petugas == "" || alamat_petugas == "" || no_telp_petugas == "" || status_petugas == ""){
+					alert("Data Tidak Lengkap");
+					$("#status").html("");
+                    $("#ttambah").prop("disabled", false);
+				}
     			
     			$("#loading").show();
     			$.ajax({

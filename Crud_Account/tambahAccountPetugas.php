@@ -43,9 +43,9 @@
     </fieldset>
 
 	<script type="text/javascript">
-		var username;
-		var password;
-		var nama_petugas;
+		var username = "";
+		var password = "";
+		var nama_petugas = "";
 		var data_account;
 		$(document).ready(function(){
 			
@@ -58,8 +58,8 @@
 
 			$("#ttambah").click(function(){ 
 				//ambil nilai-nilai dari masing-masing input 
-				$("#ttambah").attr("disabled");
 				$("#status").html("lagi diproses");
+				$("#ttambah").prop("disabled", true);
 				username = $("#username").val();
     			password = $("#password").val();
     			//data = "&tgl_imun="+tgl_imun+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan="+berat_badan+"&periode="+periode;
@@ -69,6 +69,11 @@
 					"nama_petugas" : nama_petugas
 				};	
 				
+				if ($("#username").val() == "" || $("#password") == ""){
+					alert("Data Tidak Lengkap");
+					$("#status").html("");
+					$("#ttambah").prop("disabled", false);
+				}
 				
     			$("#loading").show();
     			$.ajax({
@@ -80,9 +85,9 @@
     				if(msg.message == "account was created."){
     					alert("Account berhasil Ditambah");
 						window.location.href="accountPetugas.php";
-    				} else if (msg.message == "Unable to create data account.") {
-    					alert("DATA TIDAK LENGKAP");
-						$("#status").html("Data Tidak Lengkap");
+    				} else if (http_request_code == 503) {
+    					alert("ERROR...");
+						$("#status").html("ERROR...");
 					}
     				$("#loading").hide();
        			}

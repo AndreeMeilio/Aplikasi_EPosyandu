@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="alamat_posyandu" id="label">Alamat</label>
+				<label for="alamat_posyandu" id="label" style="margin-top: 10px;">Alamat</label>
 				<input type="text" class="form-control" id="alamat_posyandu">
 			</div>
 
@@ -60,6 +60,8 @@
 		var posyandu;
 		$(document).ready(function(){
 			$("#ttambah").click(function(){ 
+				$("#status").html("lagi diproses");
+				$("#ttambah").prop("disabled", true);
 				//ambil nilai-nilai dari masing-masing input 
 				nama_posyandu = $("#nama_posyandu").val();
 
@@ -76,6 +78,11 @@
 					"kota_kab_posyandu" : kota_kab_posyandu
 				};	
 
+				if (nama_posyandu == "" || alamat_posyandu == "" || kel_posyandu == "" || kec_posyandu == "" || kota_kab_posyandu == ""){
+					alert("Data Tidak Lengkap");
+					$("#status").html("");
+					$("#ttambah").prop("disabled", false);
+				}
 				
     			$("#loading").show();
     			$.ajax({

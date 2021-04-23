@@ -84,6 +84,8 @@ Email :
 		var saran;
 		$(document).ready(function(){
 			$("#tambahpesan").click(function(){ 
+				$("#status").html("lagi diproses");
+				$("#tambahpesan").prop('disabled', true);
 				//ambil nilai-nilai dari masing-masing input 
 				nama= $("#nama").val();
     			kritik = $("#kritik").val();
@@ -97,7 +99,7 @@ Email :
 					"kritik" : kritik,
 					"email" : email,
 					"tanggal" : tanggal				
-					};	
+				};	
 
 				
     			$("#loading").show();

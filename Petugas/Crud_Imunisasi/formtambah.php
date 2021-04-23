@@ -192,6 +192,8 @@
 			
 
 			$("#ttambah").click(function(){ 
+				$("#status").html("lagi diproses");
+				$("#ttambah").prop("disabled", true);
 				//ambil nilai-nilai dari masing-masing input 
 				tgl_imunisasi = $("#tgl_imunisasi").val();
     			usia_saat_vaksin = $("#usia_saat_vaksin").val();
@@ -211,6 +213,11 @@
 					"nama_ibu" : nama_ibu
 				};	
 
+				if (tgl_imunisasi == "" || usia_saat_vaksin == "" || tinggi_badan == "" || berat_badan == "" || periode == "" || nama_anak == "" || nama_ibu == ""){
+					alert("Data Tidak Lengkap");
+					$("#status").html("");
+					$("#ttambah").prop("disabled", false);
+				}
 			
     			$("#loading").show();
     			$.ajax({

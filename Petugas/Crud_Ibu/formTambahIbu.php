@@ -64,11 +64,9 @@
 		var ibu;
 		$(document).ready(function(){
 		$("#ttambah").click(function(){ 
+			$("#status").html("lagi diproses");
+				$("#ttambah").prop("disabled", true);
 				nik_ibu = $("#nik_ibu").val(); 
-				if(nik_ibu==""){ 
-					alert("Nik belum diisi\nKlik Tambah Data Ibu"); 
-					exit(); 
-				} 
 				
 				nama_ibu = $("#nama_ibu").val(); 
 				alamat_ibu = $("#alamat_ibu").val(); 
@@ -81,6 +79,12 @@
 					"alamat_ibu" : alamat_ibu,
 					"no_telp_ibu" : no_telp_ibu		
 				};
+
+				if (nik_ibu == "" || nama_ibu == "" || alamat_ibu == "" || no_telp_ibu == ""){
+					alert("Data Tidak Lengkap");
+					$("#status").html("");
+                    $("#ttambah").prop("disabled", false);
+				}
 				
 				$("#loading").show(); 
 				$.ajax({ 

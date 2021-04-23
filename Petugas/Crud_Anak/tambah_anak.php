@@ -88,6 +88,8 @@
 			});
 
 			$("#ttambah").click(function(){ 
+				$("#status").html("lagi diproses");
+				$("#ttambah").prop("disabled", true);
 				//ambil nilai-nilai dari masing-masing input 
 				nik_anak = $("#nik_anak").val();
     			nama_anak = $("#nama_anak").val();
@@ -106,6 +108,11 @@
 					"id_ibu" : id_ibu
 				};	
 				
+				if (nik_anak == "" || nama_anak == "" || tempat_lahir_anak == "" || tgl_lahir_anak == "" || usia_anak == "" || jk_anak == "" || id_ibu == ""){
+					alert("Data Tidak Lengkap");
+					$("#status").html("");
+                    $("#ttambah").prop("disabled", false);
+				}
 				
     			$("#loading").show();
     			$.ajax({
