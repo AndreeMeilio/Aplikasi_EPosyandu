@@ -24,7 +24,7 @@ class KritikSaran  {
 			return $stmt;
 		}
         public function readPagination(){
-            $query = "SELECT * FROM ".$this->table_nama. " LIMIT $this->startPage, $this->dataPerPage";
+            $query = "SELECT ref_bantuan.id_bantuan, ref_ibu.nama_ibu, ref_bantuan.email, ref_bantuan.tanggal FROM $this->table_nama LEFT JOIN ref_ibu ON ref_bantuan.nama = ref_ibu.id_ibu LIMIT $this->startPage, $this->dataPerPage";
 
 			$stmt = $this->conn->prepare($query);
 			$stmt->execute();

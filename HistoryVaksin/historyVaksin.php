@@ -37,6 +37,7 @@
         <div class="form-group" style="margin-top: 130px; margin-left: 230px; width: 30%;">
             <table id="ttable" border="0" class="table table-hover table-light table-striped" style="width: 200%;">
                 <h1>Riwayat Vaksin Anak</h1><br>
+<<<<<<< HEAD
                 <form action="">
                 <div class="container">
 
@@ -57,6 +58,8 @@
                     </tr>
                 </thead>
                 <tbody id="content"></tbody>
+=======
+>>>>>>> a11c686b75169af242c3440d9c00fd4e5f397d53
                 <div class="container">
                     <div class="panel panel-default">
                         <div class="panel-body">
