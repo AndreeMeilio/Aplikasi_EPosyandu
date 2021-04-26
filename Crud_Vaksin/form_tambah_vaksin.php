@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: ../index.php");
+    header("location: http://eposyandu.astakaryakreatif.com/");
   }
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
                 <input type="text" class="form-control" id="nama_vaksin">
             </div>
         <div class="form-group row">
-        <button onclick="window.location.href='crudVaksin.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
+        <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Crud_Vaksin/crudVaksin.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
         <button type="button" id="ttambah" class="btn btn-success col-form"> TAMBAH </button>  
         <span id="status"></span>
         </div>   
@@ -60,7 +60,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://localhost/Aplikasi_EPosyandu/api/Vaksin/create.php",
+    			url : "http://eposyandu.astakaryakreatif.com/api/Vaksin/create.php",
     			data : {vaksin : vaksin, func_vaksin : "tambah_data_vaksin"},
     			cache : false,
     			success : function(msg){

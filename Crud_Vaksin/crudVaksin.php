@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: ../index.php");
+    header("location: http://eposyandu.astakaryakreatif.com/");
   }
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
   ?>
   <div id="content1" style="margin-left: 230px; margin-top: 130px;">
     <h1>Data Vaksin</h1>
-    <button onclick="window.location.href='form_tambah_vaksin.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Vaksin</button><br><br>
+    <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Crud_Vaksin/form_tambah_vaksin.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Vaksin</button><br><br>
     <!-- <table id="ttable"border="1" >
       <button onclick="window.location.href='form_tambah_vaksin.php'">Tambah Data Vaksin</button> -->
       <table id="ttable" border="0" class="table table-hover table-light table-striped">
@@ -50,7 +50,7 @@
       <div id="contentPagination"></div>
       <br>
       <span id="status"></span>
-      <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-lg p-2 bg-success rounded" id="buttonn" style="color: white;">Kembali</button><br><br>
+      <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn shadow-lg p-2 bg-success rounded" id="buttonn" style="color: white;">Kembali</button><br><br>
    </div><!-- 
   <button type="button" onclick="window.location.href='../home.html'">BACK TO DASHBOARD</button> -->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -68,7 +68,7 @@
 	  function getAllData(){
       $.ajax({
 		  type : "GET",	
-          url : "http://localhost/Aplikasi_EPosyandu/api/Vaksin/read.php",
+          url : "http://eposyandu.astakaryakreatif.com/api/Vaksin/read.php",
           data : {page : "<?php $page = isset($_GET['page']) ? $_GET['page'] : 1; echo $page ?>"},
           cache : false,
           success : function(msg){
@@ -117,7 +117,7 @@
         if(yakin == true){
           $.ajax({
           type : "POST",
-					url : "http://localhost/Aplikasi_EPosyandu/api/Vaksin/delete.php",
+					url : "http://eposyandu.astakaryakreatif.com/api/Vaksin/delete.php",
 					data : {func_vaksin : "delete", id_vaksin : $(this).val()},
 					cache: false,
 					success: function(msg){

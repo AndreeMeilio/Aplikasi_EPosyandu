@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: ../index.php");
+    header("location: http://eposyandu.astakaryakreatif.com/");
   }
 ?>
 <!DOCTYPE html>
@@ -92,7 +92,7 @@
         Status Petugas :<br>
         <input type="text" id="status_petugas"><p> -->
         <div class="form-group row">
-        <button onclick="window.location.href='crudpetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
+        <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Crud_Petugas/crudpetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
         <button type="button" id="ttambah" class="btn btn-success col-form">TAMBAH</button>
         <span id="status"></span>
     </div>
@@ -142,7 +142,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://localhost/Aplikasi_EPosyandu/api/Petugas/create.php",
+    			url : "http://eposyandu.astakaryakreatif.com/api/Petugas/create.php",
     			data : {petugas : petugas, func_petugas : "tambah_data_petugas"},
     			cache : false,
     			success : function(msg){

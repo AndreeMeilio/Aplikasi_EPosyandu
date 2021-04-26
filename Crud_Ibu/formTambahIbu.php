@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: ../index.php");
+    header("location: http://eposyandu.astakaryakreatif.com/");
   }
 ?>
 <!DOCTYPE html>
@@ -90,7 +90,7 @@
 				$("#loading").show(); 
 				$.ajax({ 
 					type : "POST",
-					url: "http://localhost/Aplikasi_EPosyandu/api/Ibu/create.php", 
+					url: "http://eposyandu.astakaryakreatif.com/api/Ibu/create.php", 
 					data: {ibu : ibu, func_ibu : "tambah_data_ibu"},
 					cache: false, 
 					success: function(msg){ 

@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: ../index.php");
+    header("location: http://eposyandu.astakaryakreatif.com/");
   }
 ?>
 <html>
@@ -33,7 +33,7 @@
   ?>
   <div id="content1" style="margin-left: 230px; margin-top: 130px;">
       <h1>Data Petugas</h1>
-      <button type="buton" onclick="window.location.href='tambah_petugas.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Petugas</button><br><br>
+      <button type="buton" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Crud_Petugas/tambah_petugas.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Petugas</button><br><br>
       	<table id="ttable" border="0" class="table table-hover table-light table-striped">
           <thead class="bg-dark">
               <tr class="text-white text-center align-middle">
@@ -59,7 +59,7 @@
       <div id="contentPagination"></div>
       <br>
         <span id="status"></span>
-        <button onclick="window.location.href='../home3.php'"  class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</a></button><br>
+        <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'"  class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</a></button><br>
       </div>	
 	 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script type="text/javascript">
@@ -82,7 +82,7 @@
 	  function getAllData(){
       $.ajax({
 		      type : "GET",	
-          url : "http://localhost/Aplikasi_EPosyandu/api/Petugas/read.php",
+          url : "http://eposyandu.astakaryakreatif.com/api/Petugas/read.php",
           data : {page : "<?php $page = isset($_GET['page']) ? $_GET['page'] : 1; echo $page ?>"},
           cache : false,
           success : function(msg){
@@ -136,7 +136,7 @@
         if(yakin == true){
           $.ajax({
           type : "POST",
-					url : "http://localhost/Aplikasi_EPosyandu/api/Petugas/delete.php",
+					url : "http://eposyandu.astakaryakreatif.com/api/Petugas/delete.php",
 					data : {func_petugas : "delete", id_petugas : $(this).val()},
 					cache: false,
 					success: function(msg){
