@@ -94,7 +94,7 @@
             <a href="http://eposyandu.astakaryakreatif.com/Crud_Ibu/crudIbu.php"><img src="img/Menu/dataibu.png" class="card-img" width="100px" /></a>
           </div>
           <div class="col-md-3">
-            <a href="http://eposyandu.astakaryakreatif.com/Crud_Petugas/crudpetugas.php"><img src="img/Menu/datapetugass.png" class="card-img" width="100px" /></a>
+            <a href="http://eposyandu.astakaryakreatif.com/Crud_Petugas/crudPetugas.php"><img src="img/Menu/datapetugass.png" class="card-img" width="100px" /></a>
           </div>
           <div class="col-md-3">
             <a href="http://eposyandu.astakaryakreatif.com/Crud_Posyandu/crudPosyandu.php"><img src="img/Menu/dataposyanduu.png" class="card-img" width="100px" /></a>
