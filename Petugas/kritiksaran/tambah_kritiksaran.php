@@ -87,13 +87,12 @@ Email :
 		$(document).ready(function(){
 			$("#nama").load("http://localhost/Aplikasi_EPosyandu/api/Imunisasi/create.php", "func_imunisasi=ambil_option_ibu");
 			$("#nama").change(function(){
-				nama_ibu = $(this).children("option:selected").val();
+				nama = $(this).children("option:selected").val();
 			});
 			$("#tambahpesan").click(function(){ 
 				$("#status").html("lagi diproses");
 				$("#tambahpesan").prop('disabled', true);
 				//ambil nilai-nilai dari masing-masing input 
-				nama= $("#nama").val();
     			kritik = $("#kritik").val();
 				email = $("#email").val();
 				tanggal = $("#tanggal").val();

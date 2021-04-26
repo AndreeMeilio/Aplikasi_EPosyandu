@@ -41,7 +41,7 @@
 
 				$kritiksaran_item=array(
 					"id_kritiksaran"=>$id_bantuan,
-					"nama_kritiksaran"=>$nama,
+					"nama_kritiksaran"=>$nama_ibu,
 					"email_kritiksaran" => $email,
 					"tanggal"=>$tanggal		
 				);
