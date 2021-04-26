@@ -50,7 +50,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="email" id="label">Email</label>
+				<label for="email" id="label">Email Ibu</label>
 				<input type="text" class="form-control" id="email">
 			</div>
 
