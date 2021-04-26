@@ -43,12 +43,12 @@
 		<form class="form-horizontal shadow p-3 mb-5 bg-body rounded bg-light">
 			<h3>Kritik dan Saran</h3><br>
 			<div class="form-group">
-				<label for="nama" id="label">Nama</label>
+				<label for="nama" id="label">Nama Ibu</label>
 				<input type="text" class="form-control" id="nama">
 			</div>
 
 			<div class="form-group">
-				<label for="email" id="label">Email</label>
+				<label for="email" id="label">Email Ibu</label>
 				<input type="text" class="form-control" id="email">
 			</div>
 

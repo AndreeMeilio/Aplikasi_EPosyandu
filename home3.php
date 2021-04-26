@@ -65,11 +65,11 @@
           <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/login.png" width="70px"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="AccountAdmin/formEditAccountAdmin.php">Edit Account</a>
-              <a class="dropdown-item" href="Bantuan/bantuan.php">Bantuan</a>
-              <a class="dropdown-item" href="kritiksaran/crudkritiksaran.php">Kritik dan Saran</a>
-              <a class="dropdown-item" href="HistoryVaksin/historyVaksin.php">Riwayat Vaksin Anak</a>
-              <a class="dropdown-item" href="tentang/tentangposyandu.php">Tentang Posyandu</a>
               <a class="dropdown-item" href="Crud_Account/accountPetugas.php">Account Petugas</a>
+              <a class="dropdown-item" href="HistoryVaksin/historyVaksin.php">Riwayat Vaksin Anak</a>
+              <a class="dropdown-item" href="kritiksaran/crudkritiksaran.php">Kritik dan Saran</a>
+              <a class="dropdown-item" href="tentang/tentangposyandu.php">Tentang Posyandu</a>
+              <a class="dropdown-item" href="Bantuan/bantuan.php">Bantuan</a>
               <a class="dropdown-item" href="logout.php">Logout</a>
              </div>
           </div> 

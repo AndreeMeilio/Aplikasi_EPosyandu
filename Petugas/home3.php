@@ -65,10 +65,10 @@
           <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/login.png" width="70px"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="profil/profile.php">Profil</a>
-              <a class="dropdown-item" href="Bantuan/bantuan.php">Bantuan</a>
-              <a class="dropdown-item" href="kritiksaran/tambah_kritiksaran.php">Kritik dan Saran</a>
               <a class="dropdown-item" href="HistoryVaksin/historyVaksin.php">Riwayat Vaksin Anak</a>
+              <a class="dropdown-item" href="kritiksaran/tambah_kritiksaran.php">Kritik dan Saran</a>
               <a class="dropdown-item" href="tentang/tentangposyandu.php">Tentang Posyandu</a>
+              <a class="dropdown-item" href="Bantuan/bantuan.php">Bantuan</a>
               <a class="dropdown-item" onclick= "window.location.href ='logout.php'" style="cursor: pointer;">Logout</a>
              </div>
           </div> 
