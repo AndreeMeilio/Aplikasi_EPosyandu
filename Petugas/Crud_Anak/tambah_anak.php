@@ -88,7 +88,7 @@
 			});
 
 			$("#ttambah").click(function(){ 
-				$("#status").html("lagi diproses");
+				$("#status").html("lagi diproses"); 
 				$("#ttambah").prop("disabled", true);
 				//ambil nilai-nilai dari masing-masing input 
 				nik_anak = $("#nik_anak").val();

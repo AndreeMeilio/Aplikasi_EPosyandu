@@ -27,7 +27,7 @@
 
 			<div class="form-group">
 				<label for="nama_anak" id="label">Nama Anak</label>
-				<select class="form-control" id="nama_anak"></select>
+				<select class="form-control" id="nama_anak" disabled></select>
 			</div>
 			
 			<div class="form-group">

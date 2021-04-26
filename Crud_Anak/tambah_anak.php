@@ -13,7 +13,7 @@
     
 	<title>Tambah</title>
 </head>
-<body style="background-image: url(../img/Menu/bggg.png); background-repeat: repeat-y;">
+<body style="background-image: url(../img/Menu/bg1.png); background-repeat: repeat-y;">
     <?php
         include "../sidebar.html";
     ?>

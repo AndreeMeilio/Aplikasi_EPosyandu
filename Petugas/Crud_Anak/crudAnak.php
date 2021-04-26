@@ -55,7 +55,7 @@
       <div id="contentPagination"></div>
       <br>
   <span id="status"></span>
-  <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button>
+  <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button><br>
 
 <!--   <span id="status"></span><br><br>
   <button type="button" onclick="window.location.href='../home.html'">BACK TO DASHBORAD</button>
