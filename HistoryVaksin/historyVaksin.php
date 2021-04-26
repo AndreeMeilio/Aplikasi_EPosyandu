@@ -37,28 +37,6 @@
         <div class="form-group" style="margin-top: 130px; margin-left: 230px; width: 30%;">
             <table id="ttable" border="0" class="table table-hover table-light table-striped" style="width: 200%;">
                 <h1>Riwayat Vaksin Anak</h1><br>
-<<<<<<< HEAD
-                <form action="">
-                <div class="container">
-
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label>Cari Nama Anak : </label>
-                            <div>
-                                <select name="ibukota" class="selectpicker form-control" data-live-search="true" id="id_anak"><option></option></select><br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <thead class="bg-dark">
-                    <tr class="text-white">
-                        <th>Tanggal Imunisasi</th>
-                        <th class="align-middle" width="60%">Nama Vaksin</th>
-                    </tr>
-                </thead>
-                <tbody id="content"></tbody>
-=======
                 <div class="container">
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -84,7 +62,6 @@
                     </thead>
                     <tbody id="content"></tbody>
                 </div>
->>>>>>> 03d52d680e12935424ecc8b160cf7cdfcc4c81c6
             </table>
         </div>
     </form>

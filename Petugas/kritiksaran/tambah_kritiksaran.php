@@ -43,8 +43,10 @@
 		<form class="form-horizontal shadow p-3 mb-5 bg-body rounded bg-light">
 			<h3>Kritik dan Saran</h3><br>
 			<div class="form-group">
-				<label for="nama" id="label">Nama</label>
-				<input type="text" class="form-control" id="nama">
+			<div class="form-group">
+				<label for="nama_ibu" id="label">Nama Ibu</label>
+				<select class="form-control" id="nama"></select>
+			</div>
 			</div>
 
 			<div class="form-group">
@@ -83,6 +85,10 @@ Email :
 		var email;
 		var saran;
 		$(document).ready(function(){
+			$("#nama").load("http://localhost/Aplikasi_EPosyandu/api/Imunisasi/create.php", "func_imunisasi=ambil_option_ibu");
+			$("#nama").change(function(){
+				nama_ibu = $(this).children("option:selected").val();
+			});
 			$("#tambahpesan").click(function(){ 
 				$("#status").html("lagi diproses");
 				$("#tambahpesan").prop('disabled', true);
