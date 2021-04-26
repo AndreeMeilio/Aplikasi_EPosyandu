@@ -85,7 +85,7 @@
               content+= "<td class='text-center'>"+element.id_vaksin+"</td>"+
               "<td>"+element.nama_vaksin+"</td>" +
               '<td><button onclick="window.location.href=\'formEditVaksin.php?id_vaksin='+ element.id_vaksin +'\'" class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
-              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_vaksin+'"  >DELETE</button></td>'
+              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_vaksin+'"  >HAPUS</button></td>'
               content+="</tr>";
             }
             

@@ -87,7 +87,7 @@
               "<td>"+element.kec_posyandu+"</td>" +
               "<td>"+element.kota_kab_posyandu+"</td>" +
               '<td><button onclick="window.location.href=\'formEditPosyandu.php?id_posyandu='+ element.id_posyandu +'\'" class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
-              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_posyandu+'">DELETE</button></td>'
+              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_posyandu+'">HAPUS</button></td>'
               content+="</tr>";
             }
 

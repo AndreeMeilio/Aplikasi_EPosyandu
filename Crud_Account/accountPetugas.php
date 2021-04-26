@@ -92,7 +92,7 @@
               "<td class='text-center'>"+element.nama_petugas+" </td>"+
               "<td class='text-center'>"+element.username+" </td>" +
               '<td><button type="button" onclick="window.location.href=\'formEditAccount.php?id_login='+ element.id_login +'\'"class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
-              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_login+'">DELETE</button></td>'
+              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_login+'">HAPUS</button></td>'
               content+="</tr>";
             }
 

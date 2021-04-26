@@ -107,7 +107,7 @@
               "<td>"+element.nama_petugas+"</td>" +
               "<td>"+element.nama_vaksin+"</td>" +
               '<td><button onclick="window.location.href=\'formedit.php?id_imunisasi='+ element.id_imunisasi +'\'" class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
-              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_imunisasi+'" >DELETE</button></td>'
+              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_imunisasi+'" >HAPUS</button></td>'
               content+="</tr>";
             }
             var contentPagination = "";

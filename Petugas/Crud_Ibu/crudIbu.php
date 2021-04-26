@@ -88,7 +88,7 @@
 					"<td>"+element.alamat_ibu+" </td>" +
 					"<td>"+element.no_telp_ibu+"</td>"+
 				'<td><button onclick="window.location.href=\'formEditIbu.php?id_ibu='+ element.id_ibu +'\'" class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
-              	'<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;"  value="'+element.id_ibu+'">DELETE</button></td>'
+              	'<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;"  value="'+element.id_ibu+'">HAPUS</button></td>'
 					content+="</tr>";
 					}
 

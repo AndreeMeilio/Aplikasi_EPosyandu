@@ -39,7 +39,7 @@
   <table id="ttable" border="0" class="table table-hover table-light table-striped">
     <thead class="bg-dark">
         <tr class="text-white text-center align-middle">
-            <th width="10%">ID Imunisasi</th>
+            <th class="align-middle" style="width: 10%;">ID Imunisasi</th>
             <th class="align-middle">Tanggal Imunisasi</th>
             <th class="align-middle">Nama Anak</th>
             <th class="align-middle">Nama Ibu</th>
@@ -109,7 +109,7 @@
               "<td>"+element.nama_petugas+"</td>" +
               "<td>"+element.nama_vaksin+"</td>" +
               '<td><button onclick="window.location.href=\'formedit.php?id_imunisasi='+ element.id_imunisasi +'\'" class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
-              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_imunisasi+'" >DELETE</button></td>'
+              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_imunisasi+'" >HAPUS</button></td>'
               content+="</tr>";
             }
             var contentPagination = "";
