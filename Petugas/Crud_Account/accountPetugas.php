@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://localhost/Aplikasi_EPosyandu/index.php");
+    header("location: http://eposyandu.astakaryakreatif.com/index.php");
   }
 ?>
 <html>
@@ -32,7 +32,7 @@
     <div id="container">
       <div id="content1" style="margin-left: 230px; margin-top: 130px;">
           <h1>Data Account Petugas</h1>
-          <button type="button" onclick="window.location.href='tambahAccountPetugas.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Account Petugas</button><br><br>
+          <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/tambahAccountPetugas.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Account Petugas</button><br><br>
           		<table id="ttable"border="0" class="table table-hover table-light table-striped">
               <thead class="bg-dark">
                   <tr class="text-white text-center">
@@ -50,7 +50,7 @@
             <div id="contentPagination"></div>
             <br>
   <span id="status"></span>
-  <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button>
+  <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button>
 
 <!--   <span id="status"></span><br><br>
   <button type="button" onclick="window.location.href='../home.html'">BACK TO DASHBORAD</button>
@@ -76,7 +76,7 @@
 	  function getAllData(){
       $.ajax({
 		      type : "GET",	
-          url : "http://localhost/Aplikasi_EPosyandu/api/AccountPetugas/read.php",
+          url : "http://eposyandu.astakaryakreatif.com/api/AccountPetugas/read.php",
           data : {page : "<?php $page = isset($_GET['page']) ? $_GET['page'] : 1; echo $page ?>"},
           cache : false,
           success : function(msg){
@@ -91,7 +91,7 @@
               content+= "<td class='text-center'>"+element.id_login+"</td>"+
               "<td class='text-center'>"+element.nama_petugas+" </td>"+
               "<td class='text-center'>"+element.username+" </td>" +
-              '<td><button type="button" onclick="window.location.href=\'formEditAccount.php?id_login='+ element.id_login +'\'"class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
+              '<td><button type="button" onclick="window.location.href=\'http://eposyandu.astakaryakreatif.com/formEditAccount.php?id_login='+ element.id_login +'\'"class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
               '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_login+'">HAPUS</button></td>'
               content+="</tr>";
             }
@@ -121,7 +121,7 @@
         if(yakin == true){
           $.ajax({
           type : "GET",
-					url : "http://localhost/Aplikasi_EPosyandu/api/AccountPetugas/delete.php",
+					url : "http://eposyandu.astakaryakreatif.com/api/AccountPetugas/delete.php",
 					data : {id_login : $(this).val()},
 					cache: false,
 					success: function(msg){

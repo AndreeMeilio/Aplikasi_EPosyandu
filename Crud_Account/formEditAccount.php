@@ -38,7 +38,7 @@
                         </div>
                         <table>
                             <div class="form-group row">
-                                  <button onclick="window.location.href='accountPetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
+                                  <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/accountPetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
                                   <button type="button" class="btn btn-success col-form" id="tupdate">PERBARUI</button>
                                   <span id="status"></span>
                               </div>
@@ -77,11 +77,11 @@
         $(document).ready(function(){
 
             //$("#id_imun").load("prosesCrudImunisasi.php", "func_imun=ambil_data_imun");
-            $("#id_petugas").load("http://localhost/Aplikasi_EPosyandu/api/AccountPetugas/read_one.php", "func_account=ambil_option_petugas");
+            $("#id_petugas").load("http://eposyandu.astakaryakreatif.com/api/AccountPetugas/read_one.php", "func_account=ambil_option_petugas");
 
             $.ajax({
                 type : "GET",
-                url: "http://localhost/Aplikasi_EPosyandu/api/AccountPetugas/read_one.php",
+                url: "http://eposyandu.astakaryakreatif.com/api/AccountPetugas/read_one.php",
                 data: {func_account : "ambil_single_data", id_login: "<?php echo $_GET['id_login']?>"},
                 cache: false,
                 success: function(msg){
@@ -123,7 +123,7 @@
                 $("#loading").show();
                 $.ajax({
                 type : "POST",
-                url : "http://localhost/Aplikasi_EPosyandu/api/AccountPetugas/update.php",
+                url : http://eposyandu.astakaryakreatif.com/api/AccountPetugas/update.php",
                 data : {func_account : "update_data_account", data_account : data_account, id_login : "<?php echo $_GET['id_login']?>"},
                 cache : false,
                 success : function(msg){

@@ -32,7 +32,7 @@
   ?>
   <div id="content1" style="margin-left: 230px; margin-top: 130px;">
     <h1>Data Posyandu</h1>
-    <button type="button" onclick="window.location.href='formTambahPosyandu.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Posyandu</button>
+    <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/formTambahPosyandu.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Posyandu</button>
     <br><br>
     <table id="ttable" border="0" class="table table-hover table-light table-striped">
       <thead class="bg-dark">
@@ -51,7 +51,7 @@
     </tbody>
   </table>
   <span id="status"></span>
-  <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button><br><br>
+  <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button><br><br>
 </div>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script type="text/javascript">
@@ -70,7 +70,7 @@
 	  function getAllData(){
       $.ajax({
 		  type : "GET",	
-          url : "http://localhost/Aplikasi_EPosyandu/api/Posyandu/read.php",
+          url : "http://eposyandu.astakaryakreatif.com/api/Posyandu/read.php",
           data : {func_posyandu : "ambil_data_posyandu"},
           cache : false,
           success : function(msg){
@@ -86,7 +86,7 @@
               "<td>"+element.kel_posyandu+"</td>" +
               "<td>"+element.kec_posyandu+"</td>" +
               "<td>"+element.kota_kab_posyandu+"</td>" +
-              '<td><button onclick="window.location.href=\'formEditPosyandu.php?id_posyandu='+ element.id_posyandu +'\'" class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
+              '<td><button onclick="window.location.href=\'http://eposyandu.astakaryakreatif.com/formEditPosyandu.php?id_posyandu='+ element.id_posyandu +'\'" class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
               '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_posyandu+'">HAPUS</button></td>'
               content+="</tr>";
             }
@@ -106,7 +106,7 @@
         if(yakin == true){
           $.ajax({
           type : "POST",
-					url : "http://localhost/Aplikasi_EPosyandu/api/Posyandu/delete.php",
+					url : "http://eposyandu.astakaryakreatif.com/api/Posyandu/delete.php",
 					data : {func_posyandu : "delete", id_posyandu : $(this).val()},
 					cache: false,
 					success: function(msg){

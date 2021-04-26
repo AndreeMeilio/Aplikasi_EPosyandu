@@ -64,13 +64,13 @@
         <div class="nav-item dropleft">
           <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/login.png" width="70px"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="AccountAdmin/formEditAccountAdmin.php">Edit Account</a>
-              <a class="dropdown-item" href="Crud_Account/accountPetugas.php">Account Petugas</a>
-              <a class="dropdown-item" href="HistoryVaksin/historyVaksin.php">Riwayat Vaksin Anak</a>
-              <a class="dropdown-item" href="kritiksaran/crudkritiksaran.php">Kritik dan Saran</a>
-              <a class="dropdown-item" href="tentang/tentangposyandu.php">Tentang Posyandu</a>
-              <a class="dropdown-item" href="Bantuan/bantuan.php">Bantuan</a>
-              <a class="dropdown-item" href="logout.php">Logout</a>
+              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/AccountAdmin/formEditAccountAdmin.php">Edit Account</a>
+              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/Crud_Account/accountPetugas.php">Account Petugas</a>
+              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/HistoryVaksin/historyVaksin.php">Riwayat Vaksin Anak</a>
+              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/kritiksaran/crudkritiksaran.php">Kritik dan Saran</a>
+              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/tentang/tentangposyandu.php">Tentang Posyandu</a>
+              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/Bantuan/bantuan.php">Bantuan</a>
+              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/logout.php">Logout</a>
              </div>
           </div> 
       </nav>
@@ -79,25 +79,25 @@
       <div class="box">
         <div class="row justify-content-lg-center">
           <div class="col-md-3">
-            <a href="Crud_Imunisasi/crudImunisasi.php"><img src="img/Menu/dataimun.png" class="card-img" width="100px" /></a>
+            <a href="http://eposyandu.astakaryakreatif.com/Crud_Imunisasi/crudImunisasi.php"><img src="img/Menu/dataimun.png" class="card-img" width="100px" /></a>
           </div>
           <div class="col-md-3">
-            <a href="Crud_Vaksin/crudVaksin.php"><img src="img/Menu/datavaksin.png" class="card-img" width="100px"  /></a>
+            <a href="http://eposyandu.astakaryakreatif.com/Crud_Vaksin/crudVaksin.php"><img src="img/Menu/datavaksin.png" class="card-img" width="100px"  /></a>
           </div>
           <div class="col-md-3">
-            <a href="Crud_Anak/crudAnak.php"><img src="img/Menu/dataanak.png" class="card-img" width="100px" /></a>
+            <a href="http://eposyandu.astakaryakreatif.com/Crud_Anak/crudAnak.php"><img src="img/Menu/dataanak.png" class="card-img" width="100px" /></a>
           </div>
         </div>
         <br>
         <div class="row justify-content-lg-center">
           <div class="col-md-3">
-            <a href="Crud_Ibu/crudIbu.php"><img src="img/Menu/dataibu.png" class="card-img" width="100px" /></a>
+            <a href="http://eposyandu.astakaryakreatif.com/Crud_Ibu/crudIbu.php"><img src="img/Menu/dataibu.png" class="card-img" width="100px" /></a>
           </div>
           <div class="col-md-3">
-            <a href="Crud_Petugas/crudpetugas.php"><img src="img/Menu/datapetugass.png" class="card-img" width="100px" /></a>
+            <a href="http://eposyandu.astakaryakreatif.com/Crud_Petugas/crudpetugas.php"><img src="img/Menu/datapetugass.png" class="card-img" width="100px" /></a>
           </div>
           <div class="col-md-3">
-            <a href="Crud_Posyandu/crudPosyandu.php"><img src="img/Menu/dataposyanduu.png" class="card-img" width="100px" /></a>
+            <a href="http://eposyandu.astakaryakreatif.com/Crud_Posyandu/crudPosyandu.php"><img src="img/Menu/dataposyanduu.png" class="card-img" width="100px" /></a>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@
       $("#content").ready(function(){
       $.ajax({
 		  type : "GET",	
-          url : "http://localhost/Aplikasi_EPosyandu/api/Posyandu/read.php",
+          url : "http://eposyandu.astakaryakreatif.com/api/Posyandu/read.php",
           data : {func_posyandu : "ambil_data_posyandu"},
           cache : false,
           success : function(msg){

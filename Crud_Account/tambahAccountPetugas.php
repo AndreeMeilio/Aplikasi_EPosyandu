@@ -36,7 +36,7 @@
                 <input type="password" class="form-control" id="password">
             </div>
 			<div class="form-group row">
-                <button onclick="window.location.href='accountPetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
+                <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/accountPetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
                 <button type="button" class="btn btn-success col-form" id="ttambah">TAMBAH</button>
             	<span id="status"></span>
         	</div>
@@ -50,7 +50,7 @@
 		var data_account;
 		$(document).ready(function(){
 			
-			$("#nama_petugas").load("http://localhost/Aplikasi_EPosyandu/api/accountPetugas/create.php", "func_account=ambil_option_petugas");
+			$("#nama_petugas").load("http://eposyandu.astakaryakreatif.com/api/accountPetugas/create.php", "func_account=ambil_option_petugas");
 
 			$("#nama_petugas").change(function(){
 				nama_petugas = $(this).children("option:selected").val();
@@ -79,13 +79,13 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://localhost/Aplikasi_EPosyandu/api/AccountPetugas/create.php",
+    			url : "http://eposyandu.astakaryakreatif.com/api/AccountPetugas/create.php",
     			data : {data_account : data_account},
     			cache : false,
     			success : function(msg){
     				if(msg.message == "account was created."){
     					alert("Account berhasil Ditambah");
-						window.location.href="accountPetugas.php";
+						window.location.href="http://eposyandu.astakaryakreatif.com/accountPetugas.php";
     				} else if (http_request_code == 503) {
     					alert("ERROR...");
 						$("#status").html("ERROR...");

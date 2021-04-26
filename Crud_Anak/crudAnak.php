@@ -32,7 +32,7 @@
     <div id="container">
       <div id="content1" style="margin-left: 230px; margin-top: 130px;">
           <h1>Data Anak</h1>
-          <button type="button" onclick="window.location.href='tambah_anak.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Anak</button><br><br>
+          <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/tambah_anak.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Anak</button><br><br>
           		<table id="ttable"border="0" class="table table-hover table-light table-striped">
               <thead class="bg-dark">
                   <tr class="text-white text-center">
@@ -55,7 +55,7 @@
       <div id="contentPagination"></div>
       <br>
   <span id="status"></span>
-  <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button>
+  <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button>
 
 <!--   <span id="status"></span><br><br>
   <button type="button" onclick="window.location.href='../home.html'">BACK TO DASHBORAD</button>
@@ -84,7 +84,7 @@
 	  function getAllData(){
       $.ajax({
 		      type : "GET",	
-          url : "http://localhost/Aplikasi_EPosyandu/api/Anak/read.php",
+          url : "http://eposyandu.astakaryakreatif.com/api/Anak/read.php",
           data : {page : "<?php $page = isset($_GET['page']) ? $_GET['page'] : 1; echo $page ?>"},
           cache : false,
           success : function(msg){
@@ -104,7 +104,7 @@
               "<td>"+element.usia_anak+" Bulan</td>" +
               "<td class='text-center'>"+element.jk_anak+"</td>"+
               "<td>"+element.id_ibu+"</td>"+ 
-              '<td><button onclick="window.location.href=\'formEditAnak.php?id_anak='+ element.id_anak +'\'"class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
+              '<td><button onclick="window.location.href=\'http://eposyandu.astakaryakreatif.com/formEditAnak.php?id_anak='+ element.id_anak +'\'"class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
               '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_anak+'">HAPUS</button></td>'
               content+="</tr>";
             }
@@ -136,7 +136,7 @@
         if(yakin == true){
           $.ajax({
           type : "POST",
-					url : "http://localhost/Aplikasi_EPosyandu/api/Anak/delete.php",
+					url : "http://eposyandu.astakaryakreatif.com/api/Anak/delete.php",
 					data : {func_anak : "delete", id_anak : $(this).val()},
 					cache: false,
 					success: function(msg){

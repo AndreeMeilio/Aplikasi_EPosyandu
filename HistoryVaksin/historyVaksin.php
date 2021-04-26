@@ -37,29 +37,6 @@
         <div class="form-group" style="margin-top: 130px; margin-left: 230px; width: 30%;">
             <table id="ttable" border="0" class="table table-hover table-light table-striped" style="width: 200%;">
                 <h1>Riwayat Vaksin Anak</h1><br>
-<<<<<<< HEAD
-                <form action="">
-                <div class="container">
-
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label>Cari Nama Anak : </label>
-                            <div>
-                                <select name="ibukota" class="selectpicker form-control" data-live-search="true" id="id_anak"><option></option></select><br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <thead class="bg-dark">
-                    <tr class="text-white">
-                        <th>Tanggal Imunisasi</th>
-                        <th class="align-middle" width="60%">Nama Vaksin</th>
-                    </tr>
-                </thead>
-                <tbody id="content"></tbody>
-=======
->>>>>>> a11c686b75169af242c3440d9c00fd4e5f397d53
                 <div class="container">
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -88,14 +65,14 @@
             </table>
         </div>
     </form>
-    <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button>
+    <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type=text/javascript> 
         var id_anak;
         $(document).ready(function (){
             $("#statusPilihAnak").html("loading...");
-            $("#id_anak").load("http://localhost/Aplikasi_EPosyandu/api/HistoryVaksin/optionAnak.php", "func_history=ambil_option_anak", function(){
+            $("#id_anak").load("http://eposyandu.astakaryakreatif.com/api/HistoryVaksin/optionAnak.php", "func_history=ambil_option_anak", function(){
                 $("#statusPilihAnak").html("");
             });
             
@@ -108,7 +85,7 @@
         function getAllData(id_anak) {
             $.ajax({
                 type: "GET",
-                url: "http://localhost/Aplikasi_EPosyandu/api/HistoryVaksin/readHistoryVaksin.php",
+                url: "http://eposyandu.astakaryakreatif.com/api/HistoryVaksin/readHistoryVaksin.php",
                 data: {
                     id_anak: id_anak
                 },

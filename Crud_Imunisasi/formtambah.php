@@ -102,7 +102,7 @@
 
 		<input type="text" id="periode"><p> -->
 		<div class="form-group row">
-			<button onclick="window.location.href='crudImunisasi.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
+			<button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/crudImunisasi.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
 			<button type="button" id="ttambah" class="btn btn-success col-form"> TAMBAH </button>
 			<span id="status"></span>
 		</div>
@@ -120,9 +120,9 @@
 		var nama_vaksin;
 		var imunisasi;
 		$(document).ready(function(){
-			$("#nama_ibu").load("http://localhost/Aplikasi_EPosyandu/api/Imunisasi/create.php", "func_imunisasi=ambil_option_ibu");
-			$("#nama_anak").load("http://localhost/Aplikasi_EPosyandu/api/Imunisasi/create.php", "func_imunisasi=ambil_option_anak");
-			$("#nama_petugas").load("http://localhost/Aplikasi_EPosyandu/api/Imunisasi/create.php", "func_imunisasi=ambil_option_petugas");
+			$("#nama_ibu").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/create.php", "func_imunisasi=ambil_option_ibu");
+			$("#nama_anak").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/create.php", "func_imunisasi=ambil_option_anak");
+			$("#nama_petugas").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/create.php", "func_imunisasi=ambil_option_petugas");
 
 			// $.ajax({
 			// 	type : "GET",
@@ -222,7 +222,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://localhost/Aplikasi_EPosyandu/api/Imunisasi/create.php",
+    			url : "http://eposyandu.astakaryakreatif.com/api/Imunisasi/create.php",
     			data : {imunisasi : imunisasi, func_imunisasi : "tambah_data_imun"},
     			cache : false,
     			success : function(msg){

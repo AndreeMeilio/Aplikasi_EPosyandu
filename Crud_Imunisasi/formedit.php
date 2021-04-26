@@ -93,7 +93,7 @@
 		<input type="text" id="periode"><p>
  -->
  	<div class="form-group row">
-		<button onclick="window.location.href='crudImunisasi.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
+		<button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/crudImunisasi.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
 		<button id="tupdate" type="button" class="btn btn-success col-form"> PERBARUI </button>
 		<span id="status"></span>
 	</div>
@@ -116,13 +116,13 @@
     	$(document).ready(function(){
 
     		//$("#id_imun").load("prosesCrudImunisasi.php", "func_imunisasi=ambil_data_imun");
-			$("#nama_anak").load("http://localhost/Aplikasi_EPosyandu/api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_anak");
-			$("#nama_petugas").load("http://localhost/Aplikasi_EPosyandu/api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_petugas");
-			$("#nama_ibu").load("http://localhost/Aplikasi_EPosyandu/api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_ibu");
+			$("#nama_anak").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_anak");
+			$("#nama_petugas").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_petugas");
+			$("#nama_ibu").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_ibu");
 			
 			$.ajax({
 					type : "GET",
-					url: "http://localhost/Aplikasi_EPosyandu/api/Imunisasi/read_one.php",
+					url: "http://eposyandu.astakaryakreatif.com/api/Imunisasi/read_one.php",
 					data: {func_imunisasi : "ambil_single_data", id_imunisasi: "<?php echo $_GET['id_imunisasi']?>"},
 					cache: false,
 					success: function(msg){
@@ -228,13 +228,13 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://localhost/Aplikasi_EPosyandu/api/Imunisasi/update.php",
+    			url : "http://eposyandu.astakaryakreatif.com/api/Imunisasi/update.php",
     			data : {imunisasi : imunisasi, func_imunisasi : "update_data_imun", id_imunisasi: "<?php echo $_GET['id_imunisasi']?>"},
     			cache : false,
     			success : function(msg){
     				if(msg.message=="imunisasi was updated."){
     					alert("Data Imunisasi Berhasil Diperbarui");
-    					window.location.href="crudImunisasi.php";
+    					window.location.href="http://eposyandu.astakaryakreatif.com/crudImunisasi.php";
     				}else{
     					$("#status").html("ERROR. . . ");
     				}

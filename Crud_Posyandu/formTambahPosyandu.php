@@ -43,7 +43,7 @@
 				<input type="text" class="form-control" id="kota_kab_posyandu">
 			</div>
 			<div class="form-group row"> 
-				<button onclick="window.location.href='crudPosyandu.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
+				<button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/crudPosyandu.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
 				<button type="button" id="ttambah" class="btn btn-success col-form"> TAMBAH </button>
 				<span id="status"></span>
 			</div>
@@ -87,7 +87,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://localhost/Aplikasi_EPosyandu/api/Posyandu/create.php",
+    			url : "http://eposyandu.astakaryakreatif.com/api/Posyandu/create.php",
     			data : {posyandu : posyandu, func_posyandu : "tambah_data_posyandu"},
     			cache : false,
     			success : function(msg){

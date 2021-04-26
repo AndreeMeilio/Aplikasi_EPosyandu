@@ -64,7 +64,7 @@
                 <select class="form-control" id="id_ibu"></select>
             </div>
 			<div class="form-group row">
-                <button onclick="window.location.href='crudAnak.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
+                <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/crudAnak.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
                 <button type="button" class="btn btn-success col-form" id="ttambah">TAMBAH</button>
             	<span id="status"></span>
         	</div>
@@ -81,7 +81,7 @@
 		var data_anak;
 		$(document).ready(function(){
 			
-			$("#id_ibu").load("http://localhost/Aplikasi_EPosyandu/api/Anak/create.php", "func_anak=ambil_option_ibu");
+			$("#id_ibu").load("http://eposyandu.astakaryakreatif.com/api/Anak/create.php", "func_anak=ambil_option_ibu");
 
 			$("#id_ibu").change(function(){
 				id_ibu = $(this).children("option:selected").val();
@@ -117,7 +117,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://localhost/Aplikasi_EPosyandu/api/Anak/create.php",
+    			url : "http://eposyandu.astakaryakreatif.com/api/Anak/create.php",
     			data : {data_anak : data_anak},
     			cache : false,
     			success : function(msg){

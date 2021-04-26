@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: ../index.php");
+    header("location: http://eposyandu.astakaryakreatif.com/index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -62,14 +62,14 @@
             </table>
         </div>
     </form>
-    <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button>
+    <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type=text/javascript> 
         var id_anak;
         $(document).ready(function (){
             $("#statusPilihAnak").html("loading...");
-            $("#id_anak").load("http://localhost/Aplikasi_EPosyandu/api/HistoryVaksin/optionAnak.php", "func_history=ambil_option_anak", function(){
+            $("#id_anak").load("http://eposyandu.astakaryakreatif.com/api/HistoryVaksin/optionAnak.php", "func_history=ambil_option_anak", function(){
                 $("#statusPilihAnak").html("");
             });
             
@@ -82,7 +82,7 @@
         function getAllData(id_anak) {
             $.ajax({
                 type: "GET",
-                url: "http://localhost/Aplikasi_EPosyandu/api/HistoryVaksin/readHistoryVaksin.php",
+                url: "http://eposyandu.astakaryakreatif.com/api/HistoryVaksin/readHistoryVaksin.php",
                 data: {
                     id_anak: id_anak
                 },

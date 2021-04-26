@@ -50,7 +50,7 @@
       <br>
       <div id="contentPagination"></div>
       <br>
-      <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-lg p-2 bg-success rounded" id="buttonn" style="color: white;">Kembali</button><br><br>
+      <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn shadow-lg p-2 bg-success rounded" id="buttonn" style="color: white;">Kembali</button><br><br>
       <span id="status"></span>
       <div class="modal fade" id="contohModalScroll" tabindex="-1" role="dialog" aria-labelledby="contohModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -86,7 +86,7 @@
 	  function getAllData(){
       $.ajax({
 		  type : "GET",	
-          url : "http://localhost/Aplikasi_EPosyandu/api/KritikSaran/read.php",
+          url : "http://eposyandu.astakaryakreatif.com/api/KritikSaran/read.php",
           data : {page : "<?php $page = isset($_GET['page']) ? $_GET['page'] : 1; echo $page ?>"},
           cache : false,
           success : function(msg){
@@ -131,7 +131,7 @@
 
               $.ajax({
                 type : "GET",
-                url: "http://localhost/Aplikasi_EPosyandu/api/KritikSaran/ambil_kritik.php",
+                url: http://eposyandu.astakaryakreatif.com/api/KritikSaran/ambil_kritik.php",
                 data : {id_kritik : $(this).val()},
                 cache : false,
                 success : function(msg){
