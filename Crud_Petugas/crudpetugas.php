@@ -104,7 +104,7 @@
               "<td>"+element.no_telp_petugas+" </td>" +
               "<td>"+element.status_petugas+" </td>"+
               '<td><button onclick="window.location.href=\'formEditPetugas.php?id_petugas='+ element.id_petugas +'\'" class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
-              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_petugas+'">DELETE</button></td>'
+              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_petugas+'">HAPUS</button></td>'
                             content+="</tr>";
             }
 

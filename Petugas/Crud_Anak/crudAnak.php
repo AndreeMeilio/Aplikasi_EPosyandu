@@ -105,7 +105,7 @@
               "<td class='text-center'>"+element.jk_anak+"</td>"+
               "<td>"+element.id_ibu+"</td>"+ 
               '<td><button onclick="window.location.href=\'formEditAnak.php?id_anak='+ element.id_anak +'\'"class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +
-              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_anak+'">DELETE</button></td>'
+              '<td><button class="tdelete btn btn-danger" style="padding: 0px 10px 0px 10px;" value="'+element.id_anak+'">HAPUS</button></td>'
               content+="</tr>";
             }
             var contentPagination = "";
