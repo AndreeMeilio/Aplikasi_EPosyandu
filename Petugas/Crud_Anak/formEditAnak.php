@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://localhost/Aplikasi_EPosyandu/index.php");
+    header("location: http://eposyandu.astakaryakreatif.com/index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -105,11 +105,11 @@
         $(document).ready(function(){
 
             //$("#id_imun").load("prosesCrudImunisasi.php", "func_imun=ambil_data_imun");
-            $("#id_ibu").load("http://localhost/Aplikasi_EPosyandu/api/Anak/read_one.php", "func_anak=ambil_option_ibu");
+            $("#id_ibu").load("http://eposyandu.astakaryakreatif.com/api/Anak/read_one.php", "func_anak=ambil_option_ibu");
 
             $.ajax({
                     type : "GET",
-                    url: "http://localhost/Aplikasi_EPosyandu/api/Anak/read_one.php",
+                    url: "http://eposyandu.astakaryakreatif.com/api/Anak/read_one.php",
                     data: {func_anak : "ambil_single_data", id_anak: "<?php echo $_GET['id_anak']?>"},
                     cache: false,
                     success: function(msg){
@@ -168,7 +168,7 @@
                 $("#loading").show();
                 $.ajax({
                 type : "POST",
-                url : "http://localhost/Aplikasi_EPosyandu/api/Anak/update.php",
+                url : "http://eposyandu.astakaryakreatif.com/api/Anak/update.php",
                 data : {func_anak : "update_data_anak", data_anak : data_anak, id_anak : "<?php echo $_GET['id_anak']?>"},
                 cache : false,
                 success : function(msg){
