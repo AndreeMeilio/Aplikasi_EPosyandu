@@ -109,14 +109,14 @@
 
             $.ajax({
               type : "POST",
-              url : "http://localhost/Aplikasi_EPosyandu/api/Login/syslogin.php",
+              url : "http://eposyandu.astakaryakreatif.com/api/Login/syslogin.php",
               data : {data_login : data_login},
               cache : false,
               success : function(msg){
                 if(msg.message == "admin berhasil login"){
-                  window.location.href="http://localhost/Aplikasi_EPosyandu/home3.php";
+                  window.location.href="http://eposyandu.astakaryakreatif.com/home3.php";
     				    } else if(msg.message == "petugas berhasil login"){
-                  window.location.href="http://localhost/Aplikasi_EPosyandu/Petugas/home3.php";
+                  window.location.href="http://eposyandu.astakaryakreatif.com/Petugas/home3.php";
                 } else  {
     					    alert("username dan password tidak sesuai");
     				    }

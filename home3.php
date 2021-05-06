@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: index.php");
+    header("location: http://eposyandu.astakaryakreatif.com/");
   }
 ?>
 <!DOCTYPE html>
