@@ -44,7 +44,7 @@
 				<input type="text" class="form-control" id="kota_kab_posyandu">
 			</div>
 			<div class="form-group row">
-				<button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/crudPosyandu.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
+				<button onclick="window.location.href='crudPosyandu.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
 				<button id="tupdate" type="button" class="btn btn-success col-form"> PERBARUI </button>
 				<span id="status"></span>
 			</div>
@@ -67,7 +67,7 @@
 
 			$.ajax({
 					type : "GET",
-					url: "http://eposyandu.astakaryakreatif.com/api/Posyandu/read_one.php",
+					url: "../api/Posyandu/read_one.php",
 					data: {func_posyandu : "ambil_single_data", id_posyandu: "<?php echo $_GET['id_posyandu']?>"},
 					cache: false,
 					success: function(msg){
@@ -108,7 +108,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : http://eposyandu.astakaryakreatif.com/api/Posyandu/update.php",
+    			url : "../api/Posyandu/update.php",
     			data : {posyandu : posyandu, func_posyandu : "update_data_posyandu", id_posyandu: "<?php echo $_GET['id_posyandu']?>"},
     			cache : false,
     			success : function(msg){

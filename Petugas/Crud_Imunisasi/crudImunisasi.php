@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://eposyandu.astakaryakreatif.com/index.php");
+    header("location: index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
   ?>
 <div id="content1" style="margin-left: 230px; margin-top: 130px;">
   <h1>Data Imunisasi</h1>
-  <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Petugas/Crud_Imunisasi/formtambah.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Imunisasi</button><br><br>
+  <button onclick="window.location.href='formtambah.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Imunisasi</button><br><br>
   <table id="ttable" border="0" class="table table-hover table-light table-striped">
     <thead class="bg-dark">
         <tr class="text-white text-center align-middle">
@@ -57,7 +57,7 @@
   <div id="contentPagination"></div>
   <br>
   <span id="status"></span>
-	<button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Petugas/home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button><br><br><br>
+	<button onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button><br><br><br>
 </div>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script type="text/javascript">
@@ -84,7 +84,7 @@
 	  function getAllData(){
       $.ajax({
 		      type : "GET",	
-          url : "http://eposyandu.astakaryakreatif.com/api/Imunisasi/read.php",
+          url : "../../api/Imunisasi/read.php",
           data : {page : "<?php $page = isset($_GET['page']) ? $_GET['page'] : 1; echo $page ?>"},
           cache : false,
           success : function(msg){
@@ -139,7 +139,7 @@
         if(yakin == true){
           $.ajax({
           type : "POST",
-					url : "http://eposyandu.astakaryakreatif.com/api/Imunisasi/delete.php",
+					url : "../../api/Imunisasi/delete.php",
 					data : {func_imun : "delete", id_imunisasi : $(this).val()},
 					cache: false,
 					success: function(msg){

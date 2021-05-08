@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: http://eposyandu.astakaryakreatif.com/");
+    header("location: ");
   }
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
                 <input type="text" class="form-control" id="nama_vaksin">
             </div>
             <div class="form-group row">
-        		<button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Crud_Vaksin/crudVaksin.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
+        		<button onclick="window.location.href='crudVaksin.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
                 <button id="tupdate" type="button" class="btn btn-success col-form">PERBARUI</button> 
 		        <span id="status"></span>
             </div>
@@ -47,7 +47,7 @@
 
 			$.ajax({
 					type : "GET",
-					url: "http://eposyandu.astakaryakreatif.com/api/Vaksin/read_one.php",
+					url: "../api/Vaksin/read_one.php",
 					data: {func_vaksin : "ambil_single_data", id_vaksin : "<?php echo $_GET['id_vaksin']?>"},
 					cache: false,
 					success: function(msg){
@@ -74,7 +74,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://eposyandu.astakaryakreatif.com/api/Vaksin/update.php",
+    			url : "../api/Vaksin/update.php",
     			data : {vaksin : vaksin, func_vaksin : "update_data_vaksin", id_vaksin: "<?php echo $_GET['id_vaksin']?>"},
     			cache : false,
     			success : function(msg){

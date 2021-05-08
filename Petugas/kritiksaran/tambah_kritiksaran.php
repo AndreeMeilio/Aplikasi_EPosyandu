@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://eposyandu.astakaryakreatif.com/index.php");
+    header("location: index.php");
   }
 ?>
 <html>
@@ -70,7 +70,7 @@ Pesan :
 Email : 
 <input type="text" id="email"><br><br> -->
 		<div class="form-group row">
-			<button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn btn-success col-form">Kembali</button>
+			<button type="button" onclick="window.location.href='../home3.php'" class="btn btn-success col-form">Kembali</button>
 			<button type="button" id="tambahpesan" class="btn btn-success col-form">Kirim</button>
 			<span id="status"></span>
 		</div> </form> </fieldset>
@@ -85,7 +85,7 @@ Email :
 		var email;
 		var saran;
 		$(document).ready(function(){
-			$("#nama").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/create.php", "func_imunisasi=ambil_option_ibu");
+			$("#nama").load("../../api/Imunisasi/create.php", "func_imunisasi=ambil_option_ibu");
 			$("#nama").change(function(){
 				nama = $(this).children("option:selected").val();
 			});

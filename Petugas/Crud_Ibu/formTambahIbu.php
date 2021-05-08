@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://eposyandu.astakaryakreatif.com/index.php");
+    header("location: index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@
 			</div>
 
 		<div class="form-group row">
-			<button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Petugas/Crud_Ibu/crudIbu.php'" class="btn btn-success col-form">KEMBALI</a></button>
+			<button type="button" onclick="window.location.href='crudIbu.php'" class="btn btn-success col-form">KEMBALI</a></button>
 			<button id="ttambah" type="button" class="btn btn-success col-form">TAMBAH</button>
 			<span id="status"style="padding-left: 15px;"></span>
 		</div>
@@ -89,7 +89,7 @@
 				$("#loading").show(); 
 				$.ajax({ 
 					type : "POST",
-					url: "http://eposyandu.astakaryakreatif.com/api/Ibu/create.php", 
+					url: "../../api/Ibu/create.php", 
 					data: {ibu : ibu, func_ibu : "tambah_data_ibu"},
 					cache: false, 
 					success: function(msg){ 

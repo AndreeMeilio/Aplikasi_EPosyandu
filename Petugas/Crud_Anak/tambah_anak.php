@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://eposyandu.astakaryakreatif.com/index.php");
+    header("location: index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -81,7 +81,7 @@
 		var data_anak;
 		$(document).ready(function(){
 			
-			$("#id_ibu").load("http://eposyandu.astakaryakreatif.com/api/Anak/create.php", "func_anak=ambil_option_ibu");
+			$("#id_ibu").load("../../api/Anak/create.php", "func_anak=ambil_option_ibu");
 
 			$("#id_ibu").change(function(){
 				id_ibu = $(this).children("option:selected").val();
@@ -117,7 +117,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://eposyandu.astakaryakreatif.com/api/Anak/create.php",
+    			url : "../../api/Anak/create.php",
     			data : {data_anak : data_anak},
     			cache : false,
     			success : function(msg){

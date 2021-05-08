@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://eposyandu.astakaryakreatif.com/index.php");
+    header("location: index.php");
   }
 ?>
 <html>
@@ -65,8 +65,8 @@
 	
         <div class="form-group row">
         
-        <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
-        <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Crud_Account/formEditAccount.php'" type="button" class="btn btn-success col-form"> EDIT ACCOUNT </button>
+        <button onclick="window.location.href='../home3.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
+        <button onclick="window.location.href='../Crud_Account/formEditAccount.php'" type="button" class="btn btn-success col-form"> EDIT ACCOUNT </button>
         <span id="status"></span>
     </div>
 </form></fieldset>

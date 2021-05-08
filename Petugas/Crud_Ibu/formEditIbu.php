@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://eposyandu.astakaryakreatif.com/index.php");
+    header("location: index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -55,7 +55,7 @@
 
 
 		<div class="form-group row">
-		<button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Petugas/Crud_Ibu/crudIbu.php'" type="button"  class="btn btn-success col-form"> KEMBALI </button>
+		<button onclick="window.location.href='crudIbu.php'" type="button"  class="btn btn-success col-form"> KEMBALI </button>
 		<button id="tupdate" type="button" class="btn btn-success col-form" id="tupdate"> PERBARUI </button>
 		<span id="status"></span>
 	</div>
@@ -78,7 +78,7 @@
 
 			$.ajax({
 					type : "GET",
-					url: "http://eposyandu.astakaryakreatif.com/api/Ibu/read_one.php",
+					url: "../../api/Ibu/read_one.php",
 					data: {func_ibu : "ambil_single_data", id_ibu: "<?php echo $_GET['id_ibu']?>"},
 					cache: false,
 					success: function(msg){
@@ -117,7 +117,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://eposyandu.astakaryakreatif.com/api/Ibu/update.php",
+    			url : "../../api/Ibu/update.php",
     			data : {ibu : ibu, func_ibu : "update_data_ibu", id_ibu: "<?php echo $_GET['id_ibu']?>"},
     			cache : false,
     			success : function(msg){

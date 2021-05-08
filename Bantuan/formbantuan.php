@@ -64,7 +64,7 @@ Pesan :
 Email : 
 <input type="text" id="email"><br><br> -->
 		<div class="form-group row">
-			<button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn btn-success col-form">Kembali</button>
+			<button type="button" onclick="window.location.href='home3.php'" class="btn btn-success col-form">Kembali</button>
 			<button type="button" id="tambahpesan" class="btn btn-success col-form">Kirim</button>
 			<span id="status"></span>
 		</div> </form> </fieldset>
@@ -97,7 +97,7 @@ Email :
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://eposyandu.astakaryakreatif.com/prosesBantuan.php",
+    			url : "prosesBantuan.php",
     			data : {pesan : pesan, func_pesan : "tambah_pesan"},
     			cache : false,
     			success : function(msg)

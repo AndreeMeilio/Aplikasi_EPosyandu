@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://eposyandu.astakaryakreatif.com/index.php");
+    header("location: index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@
                 <input type="password" class="form-control" id="password">
             </div>
 			<div class="form-group row">
-                <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/accountPetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
+                <button onclick="window.location.href='accountPetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
                 <button type="button" class="btn btn-success col-form" id="ttambah">TAMBAH</button>
             	<span id="status"></span>
         	</div>
@@ -49,7 +49,7 @@
 		var data_account;
 		$(document).ready(function(){
 			
-			$("#nama_petugas").load("http://eposyandu.astakaryakreatif.com/api/accountPetugas/create.php", "func_account=ambil_option_petugas");
+			$("#nama_petugas").load("api/accountPetugas/create.php", "func_account=ambil_option_petugas");
 
 			$("#nama_petugas").change(function(){
 				nama_petugas = $(this).children("option:selected").val();
@@ -77,7 +77,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://eposyandu.astakaryakreatif.com/api/AccountPetugas/create.php",
+    			url : "../api/AccountPetugas/create.php",
     			data : {data_account : data_account},
     			cache : false,
     			success : function(msg){

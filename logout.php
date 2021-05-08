@@ -4,5 +4,5 @@ $_SESSION['username'] = '';
 unset($_SESSION['username']);
 session_unset();
 session_destroy();
-header("Location: http://eposyandu.astakaryakreatif.com/");
+header("Location:index.php ");
 ?>

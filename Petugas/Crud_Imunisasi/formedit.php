@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://eposyandu.astakaryakreatif.com/index.php");
+    header("location: index.php");
   }
 ?>
 <!DOCTYPE html>
@@ -93,7 +93,7 @@
 		<input type="text" id="periode"><p>
  -->
  	<div class="form-group row">
-		<button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Petugas/Crud_Imunisasi/crudImunisasi.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
+		<button onclick="window.location.href='crudImunisasi.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
 		<button id="tupdate" type="button" class="btn btn-success col-form"> PERBARUI </button>
 		<span id="status"></span>
 	</div>
@@ -116,13 +116,13 @@
     	$(document).ready(function(){
 
     		//$("#id_imun").load("prosesCrudImunisasi.php", "func_imunisasi=ambil_data_imun");
-			$("#nama_anak").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_anak");
-			$("#nama_petugas").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_petugas");
-			$("#nama_ibu").load("http://eposyandu.astakaryakreatif.com/api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_ibu");
+			$("#nama_anak").load("../../api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_anak");
+			$("#nama_petugas").load("../../api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_petugas");
+			$("#nama_ibu").load("../../api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_ibu");
 			
 			$.ajax({
 					type : "GET",
-					url: "http://eposyandu.astakaryakreatif.com/api/Imunisasi/read_one.php",
+					url: "../../api/Imunisasi/read_one.php",
 					data: {func_imunisasi : "ambil_single_data", id_imunisasi: "<?php echo $_GET['id_imunisasi']?>"},
 					cache: false,
 					success: function(msg){
@@ -228,7 +228,7 @@
     			$("#loading").show();
     			$.ajax({
     			type : "POST",
-    			url : "http://eposyandu.astakaryakreatif.com/api/Imunisasi/update.php",
+    			url : "../../api/Imunisasi/update.php",
     			data : {imunisasi : imunisasi, func_imunisasi : "update_data_imun", id_imunisasi: "<?php echo $_GET['id_imunisasi']?>"},
     			cache : false,
     			success : function(msg){

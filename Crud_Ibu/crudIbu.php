@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_admin'])){
-    header("location: http://eposyandu.astakaryakreatif.com/");
+    header("location: ");
   }
 ?>
 <html>
@@ -28,7 +28,7 @@
   ?>
   	<div id="content1" style="margin-left: 230px; margin-top: 130px;">
   			<h1>Data Ibu</h1>
-  			<button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Crud_Ibu/formTambahIbu.php'"class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Ibu</button> <br><br>
+  			<button type="button" onclick="window.location.href='formTambahIbu.php'"class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Ibu</button> <br><br>
 				<table id="ttable" border="0" class="table table-hover table-light table-striped">
 					<thead class="bg-dark">
 			        	<tr class="text-white text-center align-middle">
@@ -48,7 +48,7 @@
 				 <div id="contentPagination"></div>
 				 <br>
 		  <span id="status"></span>
-		  <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button><br><br>
+		  <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button><br><br>
 	</div>
 <!-- 
 	  <button type="button" onclick="window.location.href='../home.html'">BACK TO DASHBOARD</button> -->
@@ -70,7 +70,7 @@
 		  function getAllData(){
 			$.ajax({
 				type : "GET",	
-				url : "http://eposyandu.astakaryakreatif.com/api/Ibu/read.php",
+				url : "../api/Ibu/read.php",
 				data : {page : "<?php $page = isset($_GET['page']) ? $_GET['page'] : 1; echo $page ?>"},
 				cache : false,
 				success : function(msg){
@@ -117,7 +117,7 @@
 				 if(yakin == true){
 					$.ajax({
           			type : "POST",
-					url : "http://eposyandu.astakaryakreatif.com/api/Ibu/delete.php",
+					url : "../api/Ibu/delete.php",
 					data : {func_ibu : "delete", id_ibu : $(this).val()},
 					cache: false,
 					success: function(msg){

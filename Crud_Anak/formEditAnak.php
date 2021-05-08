@@ -64,7 +64,7 @@
                         </div>
                         <table>
                             <div class="form-group row">
-                                  <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/crudAnak.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
+                                  <button onclick="window.location.href='crudAnak.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
                                   <button type="button" class="btn btn-success col-form" id="tupdate">PERBARUI</button>
                                   <span id="status"></span>
                               </div>
@@ -105,11 +105,11 @@
         $(document).ready(function(){
 
             //$("#id_imun").load("prosesCrudImunisasi.php", "func_imun=ambil_data_imun");
-            $("#id_ibu").load("http://eposyandu.astakaryakreatif.com/api/Anak/read_one.php", "func_anak=ambil_option_ibu");
+            $("#id_ibu").load("../api/Anak/read_one.php", "func_anak=ambil_option_ibu");
 
             $.ajax({
                     type : "GET",
-                    url: "http://eposyandu.astakaryakreatif.com/api/Anak/read_one.php",
+                    url: "../api/Anak/read_one.php",
                     data: {func_anak : "ambil_single_data", id_anak: "<?php echo $_GET['id_anak']?>"},
                     cache: false,
                     success: function(msg){
@@ -168,7 +168,7 @@
                 $("#loading").show();
                 $.ajax({
                 type : "POST",
-                url : "http://eposyandu.astakaryakreatif.com/api/Anak/update.php",
+                url : "../api/Anak/update.php",
                 data : {func_anak : "update_data_anak", data_anak : data_anak, id_anak : "<?php echo $_GET['id_anak']?>"},
                 cache : false,
                 success : function(msg){

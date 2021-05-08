@@ -70,7 +70,7 @@
             </div>
 
     <div class="form-group row">
-        <button onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Crud_Petugas/crudpetugas.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
+        <button onclick="window.location.href='crudpetugas.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
         <button type="button" id="tupdate" class="btn btn-success col-form">PERBARUI</button> 
         <span id="status"></span>
     </div>
@@ -97,7 +97,7 @@
 
             $.ajax({
                     type : "GET",
-                    url: "http://eposyandu.astakaryakreatif.com/api/Petugas/read_one.php",
+                    url: "../api/Petugas/read_one.php",
                     data: {func_petugas : "ambil_single_data", id_petugas: "<?php echo $_GET['id_petugas']?>"},
                     cache: false,
                     success: function(msg){
@@ -156,7 +156,7 @@
                 $("#loading").show();
                 $.ajax({
                 type : "POST",
-                url : "http://eposyandu.astakaryakreatif.com/api/Petugas/update.php",
+                url : "../api/Petugas/update.php",
                 data : {petugas : petugas, func_petugas : "update_data_petugas", id_petugas : "<?php echo $_GET['id_petugas']?>"},
                 cache : false,
                 success : function(msg){

@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location: http://eposyandu.astakaryakreatif.com/index.php");
+    header("location: index.php");
   }
 ?>
 <html>
@@ -55,7 +55,7 @@
       <div id="contentPagination"></div>
       <br>
   <span id="status"></span>
-  <button type="button" onclick="window.location.href='http://eposyandu.astakaryakreatif.com/Petugas/home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button><br>
+  <button type="button" onclick="window.location.href='../home3.php'" class="btn shadow-sm p-2 bg-success rounded" id="button">Kembali</button><br>
 
 <!--   <span id="status"></span><br><br>
   <button type="button" onclick="window.location.href='../home.html'">BACK TO DASHBORAD</button>
@@ -84,7 +84,7 @@
 	  function getAllData(){
       $.ajax({
 		      type : "GET",	
-          url : "http://eposyandu.astakaryakreatif.com/api/Anak/read.php",
+          url : "../../api/Anak/read.php",
           data : {page : "<?php $page = isset($_GET['page']) ? $_GET['page'] : 1; echo $page ?>"},
           cache : false,
           success : function(msg){
@@ -136,7 +136,7 @@
         if(yakin == true){
           $.ajax({
           type : "POST",
-					url : "http://eposyandu.astakaryakreatif.com/api/Anak/delete.php",
+					url : "../../api/Anak/delete.php",
 					data : {func_anak : "delete", id_anak : $(this).val()},
 					cache: false,
 					success: function(msg){

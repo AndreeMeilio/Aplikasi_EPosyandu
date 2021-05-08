@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['username_petugas'])){
-    header("location:http://eposyandu.astakaryakreatif.com/login.php");
+    header("location:login.php");
   }
 ?>
 <!DOCTYPE html>
@@ -64,11 +64,11 @@
         <div class="nav-item dropleft">
           <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/login.png" width="70px"></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/profil/profile.php">Profil</a>
-              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/HistoryVaksin/historyVaksin.php">Riwayat Vaksin Anak</a>
-              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/kritiksaran/tambah_kritiksaran.php">Kritik dan Saran</a>
-              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/tentang/tentangposyandu.php">Tentang Posyandu</a>
-              <a class="dropdown-item" href="http://eposyandu.astakaryakreatif.com/Bantuan/bantuan.php">Bantuan</a>
+              <a class="dropdown-item" href="profil/profile.php">Profil</a>
+              <a class="dropdown-item" href="HistoryVaksin/historyVaksin.php">Riwayat Vaksin Anak</a>
+              <a class="dropdown-item" href="kritiksaran/tambah_kritiksaran.php">Kritik dan Saran</a>
+              <a class="dropdown-item" href="tentang/tentangposyandu.php">Tentang Posyandu</a>
+              <a class="dropdown-item" href="Bantuan/bantuan.php">Bantuan</a>
               <a class="dropdown-item" onclick= "window.location.href ='logout.php'" style="cursor: pointer;">Logout</a>
              </div>
           </div> 
@@ -78,13 +78,13 @@
       <div class="box">
         <div class="row justify-content-lg-center mt-5 mb-4">
           <div class="col-md-3">
-            <a href="http://eposyandu.astakaryakreatif.com/Crud_Imunisasi/crudImunisasi.php"><img src="img/Menu/dataimun.png" class="card-img" width="100px" /></a>
+            <a href="Crud_Imunisasi/crudImunisasi.php"><img src="img/Menu/dataimun.png" class="card-img" width="100px" /></a>
           </div>
           <div class="col-md-3">
-            <a href="http://eposyandu.astakaryakreatif.com/Crud_Ibu/crudIbu.php"><img src="img/Menu/dataibu.png" class="card-img" width="100px" /></a>
+            <a href="Crud_Ibu/crudIbu.php"><img src="img/Menu/dataibu.png" class="card-img" width="100px" /></a>
           </div>
           <div class="col-md-3">
-            <a href="http://eposyandu.astakaryakreatif.com/Crud_Anak/crudAnak.php"><img src="img/Menu/dataanak.png" class="card-img" width="100px" /></a>
+            <a href="Crud_Anak/crudAnak.php"><img src="img/Menu/dataanak.png" class="card-img" width="100px" /></a>
           </div>
           <!-- <div class="col-md-3">
             <a href="Crud_Vaksin/crudVaksin.php"><img src="img/Menu/datavaksin.png" class="card-img" width="100px"  /></a>
