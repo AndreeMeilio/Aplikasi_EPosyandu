@@ -46,11 +46,21 @@
 			</div>
 
 			<div class="form-group">
-				<label for="berat_badan" id="label">Berat badan</label>
-				<input type="text" class="form-control" id="berat_badan">
+				<label for="berat_badan" id="label">Berat badan (Umur)</label>
+				<input type="text" class="form-control" id="berat_badan_umur">
 			</div>
 
 			<div class="form-group">
+				<label for="berat_badan" id="label">Berat badan (Berdiri)</label>
+				<input type="text" class="form-control" id="berat_badan_berdiri">
+			</div>
+
+			<div class="form-group">
+				<label for="berat_badan" id="label">Berat badan (Terlentang)</label>
+				<input type="text" class="form-control" id="berat_badan_terlentang">
+			</div>
+
+			<!-- <div class="form-group">
 				<label for="periode" id="label">Periode</label>
 				<select class="form-control" id="periode">
   					<option>PILIH PERIODE</option>
@@ -64,7 +74,7 @@
 					<option value="18 bulan">18 Bulan</option>
 					<option value="2 tahun">2 Tahun</option>
 				</select>
-			</div>
+			</div> -->
 
 			<div class="form-group">
 				<label for="nama_vaksin" id="label">Nama Vaksin</label>
@@ -112,7 +122,9 @@
 		var tgl_imunisasi;
 		var usia_saat_vaksin;
 		var tinggi_badan;
-		var berat_badan;
+		var berat_badan_umur;
+		var berat_badan_berdiri;
+		var berat_badan_terlentang;
 		var periode;
 		var nama_anak;
 		var nama_ibu;
@@ -198,14 +210,18 @@
 				tgl_imunisasi = $("#tgl_imunisasi").val();
     			usia_saat_vaksin = $("#usia_saat_vaksin").val();
     			tinggi_badan = $("#tinggi_badan").val();
-    			berat_badan = $("#berat_badan").val();
+    			berat_badan_umur = $("#berat_badan_umur").val();
+    			berat_badan_berdiri = $("#berat_badan_berdiri").val();
+    			berat_badan_terlentang = $("#berat_badan_terlentang").val();
     			nama_vaksin = $("#nama_vaksin").val();
     			//data = "&tgl_imunisasi="+tgl_imunisasi+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan="+berat_badan+"&periode="+periode;
 				imunisasi = {
 					"tgl_imunisasi" : tgl_imunisasi,
 					"usia_saat_vaksin" : usia_saat_vaksin,
 					"tinggi_badan" : tinggi_badan,
-					"berat_badan" : berat_badan,
+					"berat_badan_umur" : berat_badan_umur,
+					"berat_badan_berdiri" : berat_badan_berdiri,
+					"berat_badan_terlentang" : berat_badan_terlentang,
 					"periode" : periode,
 					"nama_anak" : nama_anak,
 					"nama_petugas" : nama_petugas,
@@ -213,7 +229,7 @@
 					"nama_ibu" : nama_ibu
 				};	
 
-				if (tgl_imunisasi == "" || usia_saat_vaksin == "" || tinggi_badan == "" || berat_badan == "" || periode == "" || nama_anak == "" || nama_ibu == ""){
+				if (tgl_imunisasi == "" || usia_saat_vaksin == "" || tinggi_badan == "" || berat_badan_umur == "" || berat_badan_berdiri == "" || berat_badan_terlentang == "" || periode == "" || nama_anak == "" || nama_ibu == ""){
 					alert("Data Tidak Lengkap");
 					$("#status").html("");
 					$("#ttambah").prop("disabled", false);

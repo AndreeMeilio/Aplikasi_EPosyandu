@@ -18,6 +18,7 @@
 
         public function __construct($db){
             $this->conn = $db;
+            $this->id_petugas = uniqid("pet");
         }
 
         function read(){
@@ -41,7 +42,7 @@
         }
 
         function create(){
-            $query = "INSERT INTO " . $this->table_nama . " SET nama_petugas='$this->nama_petugas', jabatan_petugas='$this->jabatan_petugas', jk_petugas='$this->jk_petugas', tempat_lahir_petugas='$this->tempat_lahir_petugas', tgl_lahir_petugas='$this->tgl_lahir_petugas', alamat_petugas='$this->alamat_petugas',no_telp_petugas='$this->no_telp_petugas',status_petugas='$this->status_petugas'";
+            $query = "INSERT INTO " . $this->table_nama . " SET id_petugas = '$this->id_petugas', nama_petugas='$this->nama_petugas', jabatan_petugas='$this->jabatan_petugas', jk_petugas='$this->jk_petugas', tempat_lahir_petugas='$this->tempat_lahir_petugas', tgl_lahir_petugas='$this->tgl_lahir_petugas', alamat_petugas='$this->alamat_petugas',no_telp_petugas='$this->no_telp_petugas',status_petugas='$this->status_petugas'";
             
             
             $stmt = $this->conn->prepare($query);

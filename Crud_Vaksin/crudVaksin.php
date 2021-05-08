@@ -31,7 +31,7 @@
    include "../sidebar.html"; 
   ?>
   <div id="content1" style="margin-left: 230px; margin-top: 130px;">
-    <h1>Data Vaksin</h1>
+    <h1>Data Vaksin/Vitamin</h1>
     <button onclick="window.location.href='form_tambah_vaksin.php'" class="btn shadow-sm p-2 bg-success rounded" id="button" style="margin-top: 10px;">Tambah Data Vaksin</button><br><br>
     <!-- <table id="ttable"border="1" >
       <button onclick="window.location.href='form_tambah_vaksin.php'">Tambah Data Vaksin</button> -->

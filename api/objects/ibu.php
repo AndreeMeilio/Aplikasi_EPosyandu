@@ -13,6 +13,7 @@
 
         public function __construct($db){
             $this->conn = $db;
+            $this->id_ibu = uniqid("ib");
         }
 
         function read(){

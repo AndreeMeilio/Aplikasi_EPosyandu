@@ -1,4 +1,6 @@
 <?php
+	include_once '../fungsi/count_usia';
+
   session_start();
   if(!isset($_SESSION['username_admin'])){
     header("location: ../index.php");
@@ -44,7 +46,7 @@
 
             <div class="form-group"> 
                 <label for="usia_anak" id="label">Usia Anak</label>
-                <input type="text" class="form-control" id="usia_anak">
+                <input type="text" class="form-control" id="usia_anak" disabled>
             </div>
             <div class="row">
                 <label class="col-form-label col-sm-4 " id="label">Jenis Kelamin</label>
@@ -85,6 +87,15 @@
 
 			$("#id_ibu").change(function(){
 				id_ibu = $(this).children("option:selected").val();
+			});
+
+			var usia_anak_sementara
+			$(document).on("click", "#tgl_lahir_anak", function(){
+				usia_anak_sementara = $(this).val();
+
+				console.log("test")
+
+				$("#usia_anak").val(<?php echo count_usia(tgl_lahir_anak)?>)
 			});
 
 			$("#ttambah").click(function(){ 

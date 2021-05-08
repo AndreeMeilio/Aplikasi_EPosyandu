@@ -8,21 +8,26 @@
 		public $tgl_imunisasi;
 		public $usia_saat_vaksin;
 		public $tinggi_badan;
-		public $berat_badan;
+		public $berat_badan_umur;
+		public $berat_badan_berdiri;
+		public $berat_badan_terlentang;
 		public $periode;
 		public $nama_anak;
 		public $nama_petugas;
 		public $nama_vaksin;
 		public $nama_ibu;
+		public $fromDate;
+		public $toDate;
 		public $startPage;
         public $dataPerPage;
 
 		public function __construct($db){
 			$this->conn = $db;
+			$this->id_imunisasi = uniqid("imu");
 		}
 		public function read(){
 			$query = "SELECT ref_imunisasi.id_imunisasi, ref_imunisasi.tgl_imunisasi, ref_imunisasi.usia_saat_vaksin, 
-			ref_imunisasi.tinggi_badan, ref_imunisasi.berat_badan, ref_imunisasi.periode, ref_anak.nama_anak,
+			ref_imunisasi.tinggi_badan, ref_imunisasi.berat_badan_umur, ref_imunisasi.berat_badan_berdiri, ref_imunisasi.berat_badan_terlentang,  ref_imunisasi.periode, ref_anak.nama_anak,
 			ref_petugas.nama_petugas, ref_ibu.nama_ibu, ref_imunisasi.id_vaksin FROM ".$this->table_nama. 
 			" LEFT JOIN ref_anak ON ref_imunisasi.id_anak = ref_anak.id_anak".
 			" LEFT JOIN ref_ibu ON ref_imunisasi.id_ibu = ref_ibu.id_ibu".
@@ -36,7 +41,7 @@
 
 		public function readPagination(){
 			$query = "SELECT ref_imunisasi.id_imunisasi, ref_imunisasi.tgl_imunisasi, ref_imunisasi.usia_saat_vaksin, 
-			ref_imunisasi.tinggi_badan, ref_imunisasi.berat_badan, ref_imunisasi.periode, ref_anak.nama_anak,
+			ref_imunisasi.tinggi_badan, ref_imunisasi.berat_badan_umur, ref_imunisasi.berat_badan_berdiri, ref_imunisasi.berat_badan_terlentang, ref_imunisasi.periode, ref_anak.nama_anak,
 			ref_petugas.nama_petugas, ref_ibu.nama_ibu, ref_imunisasi.id_vaksin FROM ".$this->table_nama. 
 			" LEFT JOIN ref_anak ON ref_imunisasi.id_anak = ref_anak.id_anak".
 			" LEFT JOIN ref_ibu ON ref_imunisasi.id_ibu = ref_ibu.id_ibu".
@@ -52,8 +57,8 @@
 			
 			// query to insert record
 			$query = "INSERT INTO
-						" . $this->table_nama . " (tgl_imunisasi, usia_saat_vaksin, tinggi_badan, berat_badan, periode, id_vaksin, id_anak, id_petugas, id_ibu) values ('$this->tgl_imunisasi', '$this->usia_saat_vaksin', '
-						$this->tinggi_badan', '$this->berat_badan', '$this->periode', '$this->nama_vaksin', '$this->nama_anak', '$this->nama_petugas', '$this->nama_ibu')";
+						" . $this->table_nama . " (id_imunisasi, tgl_imunisasi, usia_saat_vaksin, tinggi_badan, berat_badan_umur, berat_badan_berdiri, berat_badan_terlentang, periode, id_vaksin, id_anak, id_petugas, id_ibu) values ('$this->id_imunisasi','$this->tgl_imunisasi', '$this->usia_saat_vaksin', '
+						$this->tinggi_badan', '$this->berat_badan_umur', '$this->berat_badan_berdiri', '$this->berat_badan_terlentang', '$this->periode', '$this->nama_vaksin', '$this->nama_anak', '$this->nama_petugas', '$this->nama_ibu')";
 		 	// prepare query
 			$stmt = $this->conn->prepare($query);
 			
@@ -82,7 +87,7 @@
   
             // query to read single record
             $query = "SELECT ref_imunisasi.id_imunisasi, ref_imunisasi.tgl_imunisasi, ref_imunisasi.usia_saat_vaksin, 
-			ref_imunisasi.tinggi_badan, ref_imunisasi.berat_badan, ref_imunisasi.periode, ref_anak.nama_anak, ref_anak.id_anak, ref_petugas.id_petugas, ref_ibu.id_ibu, ref_imunisasi.id_vaksin,
+			ref_imunisasi.tinggi_badan, ref_imunisasi.berat_badan_umur, ref_imunisasi.berat_badan_berdiri, ref_imunisasi.berat_badan_terlentang,  ref_imunisasi.periode, ref_anak.nama_anak, ref_anak.id_anak, ref_petugas.id_petugas, ref_ibu.id_ibu, ref_imunisasi.id_vaksin,
 			ref_petugas.nama_petugas FROM ".$this->table_nama. 
 			" LEFT JOIN ref_anak ON ref_imunisasi.id_anak = ref_anak.id_anak".
 			" LEFT JOIN ref_petugas ON ref_imunisasi.id_petugas = ref_petugas.id_petugas". 
@@ -103,7 +108,9 @@
             $this->tgl_imunisasi = $row['tgl_imunisasi'];
             $this->usia_saat_vaksin = $row['usia_saat_vaksin'];
             $this->tinggi_badan = $row['tinggi_badan'];
-            $this->berat_badan = $row['berat_badan'];
+            $this->berat_badan_umur = $row['berat_badan_umur'];
+            $this->berat_badan_berdiri = $row['berat_badan_berdiri'];
+            $this->berat_badan_terlentang = $row['berat_badan_terlentang'];
             $this->periode = $row['periode'];
 			$this->nama_anak = $row['id_anak'];
 			$this->nama_petugas = $row['id_petugas'];
@@ -118,7 +125,9 @@
 					SET tgl_imunisasi = '$this->tgl_imunisasi', 
 						usia_saat_vaksin = '$this->usia_saat_vaksin', 
 						tinggi_badan = '$this->tinggi_badan ', 
-						berat_badan = '$this->berat_badan',
+						berat_badan_umur = '$this->berat_badan_umur',
+						berat_badan_berdiri = '$this->berat_badan_berdiri',
+						berat_badan_terlentang = '$this->berat_badan_terlentang',
                         periode = '$this->periode',
 						id_anak = '$this->nama_anak',
 						id_petugas = '$this->nama_petugas',
@@ -150,6 +159,20 @@
                 return true;
             } 
             return false;
+        }
+
+		public function dataRekap(){
+            $query = "SELECT ref_imunisasi.id_imunisasi, ref_imunisasi.tgl_imunisasi, ref_imunisasi.usia_saat_vaksin, 
+			ref_imunisasi.tinggi_badan, ref_imunisasi.berat_badan_umur, ref_imunisasi.berat_badan_berdiri, ref_imunisasi.berat_badan_terlentang, ref_imunisasi.periode, ref_anak.nama_anak, ref_anak.usia_anak, ref_anak.tgl_lahir_anak,
+			ref_petugas.nama_petugas, ref_ibu.nama_ibu, ref_ibu.alamat_ibu, ref_imunisasi.id_vaksin FROM ".$this->table_nama. 
+			" LEFT JOIN ref_anak ON ref_imunisasi.id_anak = ref_anak.id_anak".
+			" LEFT JOIN ref_ibu ON ref_imunisasi.id_ibu = ref_ibu.id_ibu".
+			" LEFT JOIN ref_petugas ON ref_imunisasi.id_petugas = ref_petugas.id_petugas WHERE tgl_imunisasi BETWEEN '$this->fromDate' AND '$this->toDate'";
+        
+            $stmt = $this->conn->prepare($query);
+			$stmt->execute();
+			
+			return $stmt;
         }
 	}
 ?>

@@ -51,7 +51,9 @@
             !empty($data['tgl_imunisasi']) &&
             !empty($data['usia_saat_vaksin']) &&
             !empty($data['tinggi_badan']) && 
-            !empty($data['berat_badan'])&&
+            !empty($data['berat_badan_umur'])&&
+            !empty($data['berat_badan_berdiri'])&&
+            !empty($data['berat_badan_terlentang'])&&
             !empty($data['periode'])
         ){
         
@@ -59,7 +61,9 @@
             $imunisasi->tgl_imunisasi = $data['tgl_imunisasi'];
             $imunisasi->usia_saat_vaksin = $data['usia_saat_vaksin'];
             $imunisasi->tinggi_badan = $data['tinggi_badan'];
-            $imunisasi->berat_badan = $data['berat_badan'];
+            $imunisasi->berat_badan_umur = $data['berat_badan_umur'];
+            $imunisasi->berat_badan_berdiri = $data['berat_badan_berdiri'];
+            $imunisasi->berat_badan_terlentang = $data['berat_badan_terlentang'];
             $imunisasi->periode = isset($data['periode']) ? $data['periode'] : "";
             $imunisasi->nama_anak = isset($data['nama_anak']) ? $data['nama_anak'] : "";
             $imunisasi->nama_petugas = isset($data['nama_petugas']) ? $data['nama_petugas'] : "";

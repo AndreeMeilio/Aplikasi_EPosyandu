@@ -12,6 +12,7 @@
 
         public function __construct($db){
             $this->conn = $db;
+            $this->id_posyandu = uniqid("pos");
         }
 
         function read(){
@@ -24,7 +25,7 @@
         }
 
         function create(){
-            $query = "INSERT INTO " . $this->table_nama . " SET nama_posyandu= '$this->nama_posyandu', alamat_posyandu='$this->alamat_posyandu', kel_posyandu='$this->kel_posyandu', kec_posyandu='$this->kec_posyandu', kota_kab_posyandu='$this->kota_kab_posyandu';";
+            $query = "INSERT INTO " . $this->table_nama . " SET id_posyandu = '$this->id_posyandu' nama_posyandu= '$this->nama_posyandu', alamat_posyandu='$this->alamat_posyandu', kel_posyandu='$this->kel_posyandu', kec_posyandu='$this->kec_posyandu', kota_kab_posyandu='$this->kota_kab_posyandu';";
             
             $stmt = $this->conn->prepare($query);
             

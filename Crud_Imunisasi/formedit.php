@@ -51,8 +51,18 @@
 			</div>
 
 			<div class="form-group">
-				<label for="berat_badan" id="label">Berat badan</label>
-				<input type="text" class="form-control" id="berat_badan">
+				<label for="berat_badan_umur" id="label">Berat badan (Umur)</label>
+				<input type="text" class="form-control" id="berat_badan_umur">
+			</div>
+
+			<div class="form-group">
+				<label for="berat_badan_berdiri" id="label">Berat badan (Berdiri)</label>
+				<input type="text" class="form-control" id="berat_badan_berdiri">
+			</div>
+
+			<div class="form-group">
+				<label for="berat_badan_terlentang" id="label">Berat badan (Terlentang)</label>
+				<input type="text" class="form-control" id="berat_badan_terlentang">
 			</div>
 
 			<div class="form-group">
@@ -88,7 +98,7 @@
 		Tinggi Badan : <br>
 		<input type="text" id="tinggi_badan"><p>
 		Berat Badan : <br>
-		<input type="text" id="berat_badan"><p>
+		<input type="text" id="berat_badan_umur"><p>
 		Periode : <br>
 		<input type="text" id="periode"><p>
  -->
@@ -107,7 +117,9 @@
     var nama_vaksin;
     var tgl_imunisasi;
     var tinggi_badan;
-    var berat_badan;
+    var berat_badan_umur;
+    var berat_badan_berdiri;
+    var berat_badan_terlentang;
     var usia_saat_vaksin;
     var periode;
     var imunisasi;
@@ -132,7 +144,9 @@
 						tgl_imunisasi = data['tgl_imunisasi'];
 						usia_saat_vaksin = data['usia_saat_vaksin'];
 						tinggi_badan = data['tinggi_badan'];
-						berat_badan = data['berat_badan'];
+						berat_badan_umur = data['berat_badan_umur'];
+						berat_badan_berdiri = data['berat_badan_berdiri'];
+						berat_badan_terlentang = data['berat_badan_terlentang'];
 						periode = data['periode'];
 						nama_anak = data['nama_anak'];
 						nama_petugas = data['nama_petugas'];
@@ -143,7 +157,9 @@
 						$("#tgl_imunisasi").val(tgl_imunisasi);
 						$("#usia_saat_vaksin").val(usia_saat_vaksin);
 						$("#tinggi_badan").val(tinggi_badan);
-						$("#berat_badan").val(berat_badan);
+						$("#berat_badan_umur").val(berat_badan_umur);
+						$("#berat_badan_berdiri").val(berat_badan_berdiri);
+						$("#berat_badan_terlentang").val(berat_badan_terlentang);
 						$("#periode").val(periode);
 						$("#nama_anak").val(nama_anak);
 						$("#nama_petugas").val(nama_petugas);
@@ -208,14 +224,18 @@
     			tgl_imunisasi = $("#tgl_imunisasi").val();
     			usia_saat_vaksin = $("#usia_saat_vaksin").val();
     			tinggi_badan = $("#tinggi_badan").val();
-    			berat_badan = $("#berat_badan").val();
+    			berat_badan_umur = $("#berat_badan_umur").val();
+    			berat_badan_berdiri = $("#berat_badan_berdiri").val();
+    			berat_badan_terlentang = $("#berat_badan_terlentang").val();
 
-    			//data = "&tgl_imunisasi="+tgl_imunisasi+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan="+berat_badan+"&periode="+periode;
+    			//data = "&tgl_imunisasi="+tgl_imunisasi+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan_umur="+berat_badan_umur+"&periode="+periode;
 				imunisasi = {
 					"tgl_imunisasi" : tgl_imunisasi,
 					"usia_saat_vaksin" : usia_saat_vaksin,
 					"tinggi_badan" : tinggi_badan,
-					"berat_badan" : berat_badan,
+					"berat_badan_umur" : berat_badan_umur,
+					"berat_badan_berdiri" : berat_badan_berdiri,
+					"berat_badan_terlentang" : berat_badan_terlentang,
 					"periode" : periode,
 					"nama_anak" : nama_anak,
 					"nama_petugas" : nama_petugas,

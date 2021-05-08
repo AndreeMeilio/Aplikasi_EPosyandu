@@ -14,6 +14,7 @@ class KritikSaran  {
 		
 		public function __construct($db){
 			$this->conn = $db;
+			$this->id_kritiksaran = uniqid("ksr");
 		}
 		public function read(){
 			$query = "SELECT * FROM ".$this->table_nama;

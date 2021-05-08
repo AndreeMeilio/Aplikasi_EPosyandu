@@ -12,6 +12,7 @@ class Vaksin  {
 		
 		public function __construct($db){
 			$this->conn = $db;
+            $this->id_vaksin = uniqid("vak");
 		}
 		public function read(){
 			$query = "SELECT * FROM ".$this->table_nama;
@@ -32,7 +33,7 @@ class Vaksin  {
         }
 
 		function create(){
-            $query = "INSERT INTO " . $this->table_nama . " SET nama_vaksin= '$this->nama_vaksin';";
+            $query = "INSERT INTO " . $this->table_nama . " SET id_vaksin = '$this->id_vaksin' nama_vaksin= '$this->nama_vaksin';";
             
             $stmt = $this->conn->prepare($query);
 

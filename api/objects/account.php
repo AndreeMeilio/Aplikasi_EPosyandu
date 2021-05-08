@@ -13,6 +13,7 @@ class Account {
 		
 		public function __construct($db){
 			$this->conn = $db;
+            $this->id_login = uniqid("log");
 		}
 		public function read(){
 			$query = "SELECT ref_login.id_login, ref_login.username, ref_petugas.nama_petugas FROM ".$this->table_nama.
@@ -35,8 +36,8 @@ class Account {
 		}
 
 		function create(){
-            $query = "INSERT INTO " . $this->table_nama. "(username, password, id_petugas_login)".
-            " VALUES('$this->username', '$this->password', '$this->nama_petugas')";
+            $query = "INSERT INTO " . $this->table_nama. "(id_login, username, password, id_petugas_login)".
+            " VALUES('$this->id_login', '$this->username', '$this->password', '$this->nama_petugas')";
             
             $stmt = $this->conn->prepare($query);
 

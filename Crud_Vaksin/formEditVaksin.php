@@ -21,9 +21,9 @@
     ?>
     <fieldset>
         <form class="form-horizontal shadow p-3 mb-5 bg-body rounded bg-light">
-            <h3>Edit Data Vaksin</h3><br>
+            <h3>Edit Data Vaksin/Vitamin</h3><br>
             <div class="form-group">
-                <label for="nama_vaksin" id="label"></label>
+                <label for="nama_vaksin" id="label">Nama Vaksin/Vitamin</label>
                 <input type="text" class="form-control" id="nama_vaksin">
             </div>
             <div class="form-group row">

@@ -17,6 +17,7 @@ class Anak{
 
 		public function __construct($db){
 			$this->conn = $db;
+			$this->id_anak = uniqid("an");
 		}
 		public function read(){
 			$query = "SELECT ref_anak.id_anak, ref_anak.nama_anak, ref_anak.nik_anak, ref_anak.tempat_lahir_anak, 
@@ -44,7 +45,7 @@ class Anak{
 
 			// query to insert record
 			$query = "INSERT INTO
-						" . $this->table_nama . " SET nama_anak = '$this->nama_anak', nik_anak = '$this->nik_anak', tempat_lahir_anak = '$this->tempat_lahir_anak', tgl_lahir_anak = '$this->tgl_lahir_anak', usia_anak = '$this->usia_anak', jk_anak = '$this->jk_anak', id_ibu = '$this->id_ibu'";
+						" . $this->table_nama . " SET id_anak = '$this->id_anak', nama_anak = '$this->nama_anak', nik_anak = '$this->nik_anak', tempat_lahir_anak = '$this->tempat_lahir_anak', tgl_lahir_anak = '$this->tgl_lahir_anak', usia_anak = '$this->usia_anak', jk_anak = '$this->jk_anak', id_ibu = '$this->id_ibu'";
 		 	// prepare query
 			$stmt = $this->conn->prepare($query);
 
