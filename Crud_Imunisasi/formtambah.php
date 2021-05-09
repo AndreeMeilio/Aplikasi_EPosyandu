@@ -78,7 +78,7 @@
 
 			<div class="form-group">
 				<label for="nama_vaksin" id="label">Nama Vaksin</label>
-				<input class="form-control" id="nama_vaksin">
+				<select class="form-control" id="nama_vaksin"></select>
 			</div>
 
 			<div class="form-group">
@@ -135,6 +135,7 @@
 			$("#nama_ibu").load("../api/Imunisasi/create.php", "func_imunisasi=ambil_option_ibu");
 			$("#nama_anak").load("../api/Imunisasi/create.php", "func_imunisasi=ambil_option_anak");
 			$("#nama_petugas").load("../api/Imunisasi/create.php", "func_imunisasi=ambil_option_petugas");
+			$("#nama_vaksin").load("../api/Imunisasi/create.php", "func_imunisasi=ambil_option_vaksin");
 
 			// $.ajax({
 			// 	type : "GET",

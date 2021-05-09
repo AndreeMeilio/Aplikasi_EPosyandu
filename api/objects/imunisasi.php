@@ -168,11 +168,22 @@
 			" LEFT JOIN ref_anak ON ref_imunisasi.id_anak = ref_anak.id_anak".
 			" LEFT JOIN ref_ibu ON ref_imunisasi.id_ibu = ref_ibu.id_ibu".
 			" LEFT JOIN ref_petugas ON ref_imunisasi.id_petugas = ref_petugas.id_petugas WHERE tgl_imunisasi BETWEEN '$this->fromDate' AND '$this->toDate'";
+
+			$query2 = "SELECT ref_anak.id_anak, ref_anak.nama_anak, ref_anak.tgl_lahir_anak, ref_anak.usia_anak, ref_ibu.nama_ibu, ref_ibu.alamat_ibu, ref_imunisasi.id_imunisasi, ref_imunisasi.berat_badan_umur, ref_imunisasi.berat_badan_berdiri, ref_imunisasi.berat_badan_terlentang, ref_imunisasi.tinggi_badan, ref_imunisasi.id_vaksin, ref_imunisasi.tgl_imunisasi FROM ref_anak RIGHT JOIN ref_imunisasi ON ref_anak.id_anak = ref_imunisasi.id_anak LEFT JOIN ref_ibu ON ref_anak.id_ibu = ref_ibu.id_ibu WHERE tgl_imunisasi BETWEEN '$this->fromDate' AND '$this->toDate' GROUP BY ref_anak.id_anak";
         
-            $stmt = $this->conn->prepare($query);
+            $stmt = $this->conn->prepare($query2);
 			$stmt->execute();
 			
 			return $stmt;
         }
+
+		public function ambilVaksin(){
+			$query = "SELECT * FROM $this->table_nama WHERE tgl_imunisasi BETWEEN '$this->fromDate' AND '$this->toDate'";
+
+			$stmt = $this->conn->prepare($query);
+			$stmt->execute();
+			
+			return $stmt;
+		}
 	}
 ?>

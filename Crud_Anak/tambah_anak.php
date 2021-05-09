@@ -1,5 +1,5 @@
 <?php
-	include_once '../fungsi/count_usia';
+	include_once '../fungsi/countUsia.php';
 
   session_start();
   if(!isset($_SESSION['username_admin'])){
@@ -89,14 +89,13 @@
 				id_ibu = $(this).children("option:selected").val();
 			});
 
-			var usia_anak_sementara
-			$(document).on("click", "#tgl_lahir_anak", function(){
-				usia_anak_sementara = $(this).val();
+			// var usia_anak_sementara;
+			// $(document).on("click", "#tgl_lahir_anak", function(){
+			// 	// usia_anak_sementara = $(this).val();
 
-				console.log("test")
+			// 	console.log("test")
 
-				$("#usia_anak").val(<?php echo count_usia(tgl_lahir_anak)?>)
-			});
+			// });
 
 			$("#ttambah").click(function(){ 
 				$("#status").html("lagi diproses");

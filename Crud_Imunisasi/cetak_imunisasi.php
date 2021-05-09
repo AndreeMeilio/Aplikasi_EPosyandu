@@ -4,8 +4,6 @@
     header("Access-Control-Allow-Headers: access");
     header("Access-Control-Allow-Methods: GET");
     header("Access-Control-Allow-Credentials: true");
-    header("Content-type: application/vnd-ms-excel");
-    header("Content-Disposition: attachment; filename=Data Pegawai.xls");
     // header('Content-Type: application/json');
     
     // include database and object files
@@ -26,6 +24,11 @@
     $imunisasi->toDate = $dateTo;
 
     $stmt2 = $imunisasi->dataRekap();
+
+    $imunisasi->fromDate = $dateFrom;
+    $imunisasi->toDate = $dateTo;
+
+    $stmt3 = $imunisasi->ambilVaksin();
     $num2 = $stmt2->rowCount();
     //check if more than 0 record found
 
@@ -37,6 +40,33 @@
         extract($row);
 
         $imunisasi=array(
+                // "id_imunisasi"=>$id_imunisasi,
+                "id_anak"=>$id_anak,
+                "nama_anak"=>$nama_anak,
+                "tanggal_lahir"=>$tgl_lahir_anak,
+                "usia_anak"=>$usia_anak,
+                "nama_ibu"=>$nama_ibu,
+                "alamat"=>$alamat_ibu,
+                "berat_badan_umur"=>$berat_badan_umur,
+                "berat_badan_berdiri"=>$berat_badan_berdiri,
+                "berat_badan_terlentang"=>$berat_badan_terlentang,
+                "tinggi_badan"=>$tinggi_badan,
+                "id_vaksin"=>$id_vaksin,
+                "tgl_imunisasi"=>$tgl_imunisasi
+            );
+        array_push($imunisasi_arr["records"], $imunisasi);
+        }
+
+        $imunisasi_arrVaksin=array();
+        $imunisasi_arrVaksin["records"]=array();
+
+        while ($row = $stmt3->fetch(PDO::FETCH_ASSOC)){
+
+        extract($row);
+
+        $imunisasiVaksin=array(
+                // "id_imunisasi"=>$id_imunisasi,
+                "id_anak"=>$id_anak,
                 "id_imunisasi"=>$id_imunisasi,
                 "nama_anak"=>$nama_anak,
                 "tanggal_lahir"=>$tgl_lahir_anak,
@@ -47,9 +77,34 @@
                 "berat_badan_berdiri"=>$berat_badan_berdiri,
                 "berat_badan_terlentang"=>$berat_badan_terlentang,
                 "tinggi_badan"=>$tinggi_badan,
+                "nama_vaksin"=>$id_vaksin,
                 "tgl_imunisasi"=>$tgl_imunisasi
             );
-        array_push($imunisasi_arr["records"], $imunisasi);
+        array_push($imunisasi_arrVaksin["records"], $imunisasiVaksin);
+        }
+
+        foreach($imunisasi_arr['records'] as $key => $row2){
+            foreach($imunisasi_arrVaksin['records'] as $key2 => $row3){
+                if (($row2['id_anak'] == $row3['id_anak']) && ($row3['nama_vaksin'] == "HB0")){
+                    $imunisasi_arr['records'][$key]['HB0'] = $row3['tgl_imunisasi'];
+                } else if (($row2['id_anak'] == $row3['id_anak']) && ($row3['nama_vaksin'] == "BCG")){
+                    $imunisasi_arr['records'][$key]['BCG'] = $row3['tgl_imunisasi'];
+                } else if (($row2['id_anak'] == $row3['id_anak']) && ($row3['nama_vaksin'] == "DPT 1")){
+                    $imunisasi_arr['records'][$key]['DPT 1'] = $row3['tgl_imunisasi'];
+                } else if (($row2['id_anak'] == $row3['id_anak']) && ($row3['nama_vaksin'] == "DPT 2")){
+                    $imunisasi_arr['records'][$key]['DPT 2'] = $row3['tgl_imunisasi'];
+                } else if (($row2['id_anak'] == $row3['id_anak']) && ($row3['nama_vaksin'] == "DPT 3")){
+                    $imunisasi_arr['records'][$key]['DPT 3'] = $row3['tgl_imunisasi'];
+                } else if (($row2['id_anak'] == $row3['id_anak']) && ($row3['nama_vaksin'] == "Polio 1")){
+                    $imunisasi_arr['records'][$key]['Polio 1'] = $row3['tgl_imunisasi'];
+                } else if (($row2['id_anak'] == $row3['id_anak']) && ($row3['nama_vaksin'] == "Polio 2")){
+                    $imunisasi_arr['records'][$key]['Polio 2'] = $row3['tgl_imunisasi'];
+                } else if (($row2['id_anak'] == $row3['id_anak']) && ($row3['nama_vaksin'] == "Polio 3")){
+                    $imunisasi_arr['records'][$key]['Polio 3'] = $row3['tgl_imunisasi'];
+                } else if (($row2['id_anak'] == $row3['id_anak']) && ($row3['nama_vaksin'] == "Polio 4")){
+                    $imunisasi_arr['records'][$key]['Polio 4'] = $row3['tgl_imunisasi'];
+                }
+            }
         }
        
 ?>
@@ -141,15 +196,15 @@
         <td><?php echo $row['berat_badan_berdiri'];?> kg</td>
         <td><?php echo $row['berat_badan_terlentang'];?> kg</td>
         <td><?php echo $row['tinggi_badan'];?> cm</td>
-        <td>...HBO</td>
-        <td>...BCG</td>
-        <td>...DPT-HB-HIB 1</td>
-        <td>...DPT-HB-HIB 2</td>
-        <td>...DPT-HB-HIB 3</td>
-        <td>...POLIO 1</td>
-        <td>...POLIO 2</td>
-        <td>...POLIO 3</td>
-        <td>...POLIO 4</td>
+        <td><?php echo isset($row['HB0']) ? $row['HB0'] : ''; ?></td>
+        <td><?php echo isset($row['BCG']) ? $row['BCG'] : ''; ?></td>
+        <td><?php echo isset($row['DPT 1']) ? $row['DPT 1'] : ''; ?></td>
+        <td><?php echo isset($row['DPT 2']) ? $row['DPT 2'] : ''; ?></td>
+        <td><?php echo isset($row['DPT 3']) ? $row['DPT 3'] : ''; ?></td>
+        <td><?php echo isset($row['Polio 1']) ? $row['Polio 1'] : ''; ?></td>
+        <td><?php echo isset($row['Polio 2']) ? $row['Polio 2'] : ''; ?></td>
+        <td><?php echo isset($row['Polio 3']) ? $row['Polio 3'] : ''; ?></td>
+        <td><?php echo isset($row['Polio 4']) ? $row['Polio 4'] : ''; ?></td>
         <td>...IPV</td>
         <td>...MR</td>
         <td>...DPT BOOSTER</td>
